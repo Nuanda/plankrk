@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#index'
+
+  scope "(:locale)", :locale => /pl|en/ do
+    root 'home#index'
+    # root :to => 'page#index'
+    # get "page/index"
+  end
+
 end
