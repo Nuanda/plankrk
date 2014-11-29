@@ -15,4 +15,4 @@ class Dispatcher
 
     switch dispatch
       when 'home:index'
-        null
+        new ZoningMap

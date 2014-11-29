@@ -3,6 +3,11 @@
 = link_to 'lang path test - should link to root respecting the current language',  root_path
 
 %p
-  = link_to_unless I18n.locale == :en, "English", locale: :en
+  = link_to_unless I18n.locale == :en, 'English', locale: :en
   |
-  = link_to_unless I18n.locale == :pl, "Polish", locale: :pl
+  = link_to_unless I18n.locale == :pl, 'Polski', locale: :pl
+
+%p
+  = link_to 'switch zoning detail level', '#', id: 'zoning-switch'
+
+#zoning-map
