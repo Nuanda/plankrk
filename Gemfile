@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+# This source allows us use bower.io js packages as gems
+source 'https://rails-assets.org'
 
+# This declaration is required for proper Heroku deployment
 ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,6 +19,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# A rails-assets 'gem' section, downloaded and packaged from bower.io
+# That packages the leaflet.js library for maps handling
+gem 'rails-assets-leaflet'
+# It's an extension for leaflet.js to deal with ArcGIS feature layer servers
+gem 'rails-assets-esri-leaflet', '1.0.0.rc.4'
 
 # Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.0.beta2'
