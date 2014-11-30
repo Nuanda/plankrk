@@ -1,0 +1,13 @@
+# This is public config file, do NOT put any secrets here
+defaults: &defaults
+  krakow:
+    zoning_map_sever_base_url: http://msip.um.krakow.pl/arcgis/rest/services/BP_MPZP/MapServer/
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

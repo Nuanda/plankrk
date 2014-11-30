@@ -30,5 +30,8 @@ module Plankrk
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Load application-specific constants from a config file
+    config.constants = YAML.load_file('config/application.yml')[Rails.env] rescue {}
   end
 end
