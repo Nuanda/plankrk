@@ -4,12 +4,12 @@ class @ZoningMap
     @zoningMap = L.map('zoning-map').setView [50.06, 19.95], 13
 
     # Add an OpenStreetMap tile layer; other tiles could be used as well - see below
-    # NOTE: do not localize the 'contributors' word to Polish
+    # NOTE: please do not localize the 'contributors' word here, it's kind of ToU requirement
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo @zoningMap
 
-    baseZoningUrl = "http://msip.um.krakow.pl/arcgis/rest/services/BP_MPZP/MapServer/"
+    baseZoningUrl = Config.ZONING_MAP_SERVER_BASE_URL
 
     # Now we load MSIP map server feature layer from UMK ArcGIS server
     # Layer 0 - detailed zoning plans, layer 1 - zoning plan district contours
