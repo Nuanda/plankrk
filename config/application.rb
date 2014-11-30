@@ -32,6 +32,6 @@ module Plankrk
     config.active_record.raise_in_transactional_callbacks = true
 
     # Load application-specific constants from a config file
-    config.constants = YAML.load_file('config/application.yml')[Rails.env] rescue {}
+    config.constants = config_for(:application)
   end
 end
