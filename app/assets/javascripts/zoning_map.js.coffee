@@ -9,7 +9,7 @@ class @ZoningMap
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo @zoningMap
 
-    baseZoningUrl = "http://msip.um.krakow.pl/arcgis/rest/services/BP_MPZP/MapServer/"
+    baseZoningUrl = gon.zoning_map_sever_base_url
 
     # Now we load MSIP map server feature layer from UMK ArcGIS server
     # Layer 0 - detailed zoning plans, layer 1 - zoning plan district contours
