@@ -30,6 +30,10 @@ class @ZoningMap
         weight: 2
     )
 
+    # Binding popup templates to features of both layers, to be shown on feature click
+    PopupTemplates.bindPopup @districtContours, PopupTemplates.districtPopupTemplate
+    PopupTemplates.bindPopup @detailedZoning, PopupTemplates.zonePopupTemplate
+
     # Let's start with district contours
     @districtContours.addTo @zoningMap
 
