@@ -2,6 +2,5 @@ console.log('INIT: Loading global config');
 
 if (!this.Config) {
   this.Config = {};
-  // Use Rails.application.config.constants['krakow']['zoning_map_sever_base_url'] when .yml settings are merged
-  this.Config.ZONING_MAP_SERVER_BASE_URL = "<%= 'http://msip.um.krakow.pl/arcgis/rest/services/BP_MPZP/MapServer/' %>";
+  this.Config.ZONING_MAP_SERVER_BASE_URL = "<%= Rails.configuration.constants['krakow']['zoning_map_sever_base_url'] %>";
 }
