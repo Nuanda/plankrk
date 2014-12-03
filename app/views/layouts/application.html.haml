@@ -3,3 +3,6 @@
   = render 'layouts/head'
   %body(data-dispatch=body_data_dispatch)
     = yield
+    :javascript
+      console.log('INIT: setting current locale');
+      I18n.locale = "#{I18n.locale}";

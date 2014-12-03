@@ -25,6 +25,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'rails-assets-leaflet'
 # It's an extension for leaflet.js to deal with ArcGIS feature layer servers
 gem 'rails-assets-esri-leaflet', '1.0.0.rc.4'
+# Helps with translating strings directly in js/cs
+gem 'i18n-js'
 
 # Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.0.beta2'
@@ -52,7 +54,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0.0.beta4'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
 end
 
 gem 'rails_12factor', group: :production

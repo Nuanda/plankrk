@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require i18n
+//= require i18n/translations
 //= require leaflet
 //= require esri-leaflet
 //= require_tree .
