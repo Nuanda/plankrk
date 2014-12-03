@@ -25,6 +25,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'rails-assets-leaflet'
 # It's an extension for leaflet.js to deal with ArcGIS feature layer servers
 gem 'rails-assets-esri-leaflet', '1.0.0.rc.4'
+# Helps with translating strings directly in js/cs
+gem 'i18n-js'
 
 # Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.0.beta2'

@@ -3,4 +3,5 @@ console.log('INIT: Loading global config');
 if (!this.Config) {
   this.Config = {};
   this.Config.ZONING_MAP_SERVER_BASE_URL = "<%= Rails.configuration.constants['krakow']['zoning_map_sever_base_url'] %>";
+  I18n.defaultLocale = "<%= I18n.default_locale %>";
 }
