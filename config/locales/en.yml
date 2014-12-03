@@ -3,3 +3,35 @@ en:
 
   home:
     header: Let's plan Kraków together!
+
+  map:
+    plan: Plan name
+    dates: Dates
+    no_date: no date given
+
+  krakow:
+    mpzp:
+      FID: FID
+      Shape: Shape
+      BIP: BIP
+      Status: Status
+      OZNACZENIE: Zone use
+      RODZAJ_OZN: Zone type
+      DATA_AKTUA: Update date
+      NAZWA_MPZP: District name
+      DATA_UCHWA: Date of confirmation
+      UCHWALENIE: Confirmation
+      OGLOSZENIE: Announcement
+      DATA_DUWM: Date of announcement
+      DATA_OBOWI: Date of implementation
+      WWW: WWW
+      IDTXT: IDTXT
+      NAZWA: District name
+      STATUS: Status
+      PRZYSTAPIE: Inception
+      DATA_PRZYS: Date of inception
+      NR_PLANU: Plan ID
+      PROWADZACY: Responsible
+      WYKONANIE: Implementator
+      ID2: ID2
+      bip_link: BIP link
