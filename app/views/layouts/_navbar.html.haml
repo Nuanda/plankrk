@@ -10,6 +10,6 @@
         %ul.nav.navbar-nav.pull-right
           %li
             .btn-group.btn-group-xs.navbar-btn
-              = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if I18n.locale == :en}"
-              = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' if I18n.locale == :pl}"
+              = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if en?}"
+              = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' unless en?}"
 
