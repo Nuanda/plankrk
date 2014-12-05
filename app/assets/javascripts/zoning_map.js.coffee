@@ -31,6 +31,38 @@ class @ZoningMap
         weight: 2
     )
 
+    oldSelectedDistrictId = null
+    oldClickedDistrictId = null
+
+    mouseoverFunc = (e, color, layer) ->
+      featureId = e.layer.feature.id
+      if oldClickedDistrictId != featureId
+        if oldSelectedDistrictId != oldClickedDistrictId
+          layer.resetStyle(oldSelectedDistrictId)
+        oldSelectedDistrictId = featureId
+        layer.setFeatureStyle featureId, ->
+          color: color,
+          weight: 5,
+          opacity: 1
+
+    clickFunc = (e, color, layer) ->
+      layer.resetStyle(oldClickedDistrictId)
+      oldClickedDistrictId = e.layer.feature.id
+      layer.setFeatureStyle e.layer.feature.id, ->
+        color: color,
+        weight: 5,
+        opacity: 1
+
+    @districtContours.on 'mouseover', (e) =>
+      mouseoverFunc(e, '#60ba39', @districtContours)
+    @districtContours.on 'click', (e) =>
+      clickFunc(e, '#326E18', @districtContours)
+
+    @detailedZoning.on 'mouseover', (e) =>
+      mouseoverFunc(e, '#dd4439', @detailedZoning)
+    @detailedZoning.on 'click', (e) =>
+      clickFunc(e, '#B5423A', @detailedZoning)
+
     # Binding popup templates to features of both layers, to be shown on feature click
     PopupTemplates.bindPopup @districtContours, PopupTemplates.districtPopupTemplate()
     PopupTemplates.bindPopup @detailedZoning, PopupTemplates.zonePopupTemplate()
