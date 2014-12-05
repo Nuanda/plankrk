@@ -1,0 +1,20 @@
+.row
+  .col-sm-1
+    %ul.nav.nav-stacked.main-menu
+      %li.active
+        %a(href="#info-tab" data-toggle="tab")
+          = icon('map-marker')
+      %li
+        %a(href="#messages-tab" data-toggle="tab")
+          = icon('weixin')
+      %li
+        %a(href="#formal-comments-tab" data-toggle="tab")
+          = icon('files-o')
+      %li
+        %a(href="#profile-tab" data-toggle="tab")
+          = icon('user')
+  .col-sm-11.tab-content
+    #info-tab.tab-pane.active Info
+    #messages-tab.tab-pane Messages
+    #formal-comments-tab.tab-pane Formal comments
+    #profile-tab.tab-pane Profile

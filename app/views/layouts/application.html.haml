@@ -2,7 +2,15 @@
 %html
   = render 'layouts/head'
   %body(data-dispatch=body_data_dispatch)
-    = yield
+    = render 'layouts/navbar'
+
+    .container-fluid
+      .row
+        .col-xs-2.col-sm-4
+          = render 'layouts/left_section'
+
+        #content.col-xs-12.col-sm-8
+          = yield
     :javascript
       console.log('INIT: setting current locale');
       I18n.locale = "#{I18n.locale}";

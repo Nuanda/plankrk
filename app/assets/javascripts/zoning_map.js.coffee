@@ -1,5 +1,6 @@
 class @ZoningMap
   constructor: ->
+    $('#zoning-map').css('min-height', window.innerHeight - 50)
     # Create a map in the "map" div, set the view to Kraków and zoom level to 13
     @zoningMap = L.map('zoning-map').setView [50.06, 19.95], 13
 
