@@ -109,3 +109,26 @@ body {
 .navbar-btn {
   padding-top: 5px;
 }
+
+.box {
+  display: block;
+  z-index: 1999;
+  position: relative;
+  border: 1px solid #f8f8f8;
+  box-shadow: 0 0 4px #D8D8D8;
+  background: transparent;
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.box-content {
+  position: relative;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  padding: 15px;
+  background: #FCFCFC;
+}
+

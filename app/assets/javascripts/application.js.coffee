@@ -1,0 +1,9 @@
+#= require jquery
+#= require jquery_ujs
+#= require turbolinks
+#= require i18n
+#= require i18n/translations
+#= require bootstrap-sprockets
+#= require leaflet
+#= require esri-leaflet
+#= require_tree .
