@@ -1,13 +1,7 @@
-%h1= t 'home.header'
-
-= link_to 'lang path test - should link to root respecting the current language',  root_path
-
-%p
-  = link_to_unless I18n.locale == :en, 'English', locale: :en
-  |
-  = link_to_unless I18n.locale == :pl, 'Polski', locale: :pl
-
-%p
-  = link_to 'switch zoning detail level', '#', id: 'zoning-switch'
+=content_for :action_nav do
+  %ul.nav.navbar-nav
+    %li
+      = link_to '#', id: 'zoning-switch' do
+        = icon('search-plus')
 
 #zoning-map

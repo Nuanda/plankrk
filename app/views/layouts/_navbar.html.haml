@@ -1,0 +1,15 @@
+%header.navbar.navbar-fixed-top.navbar-default(role="navigation")
+  #head-container.container-fluid
+    .row
+      #logo.col-xs-12.col-sm-4
+        %a(href=root_path)
+          = icon('cubes')
+          = t('title')
+      #top-panel.col-xs-12.col-sm-8
+        =yield :action_nav
+        %ul.nav.navbar-nav.pull-right
+          %li
+            .btn-group.btn-group-xs.navbar-btn
+              = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if I18n.locale == :en}"
+              = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' if I18n.locale == :pl}"
+
