@@ -32,6 +32,8 @@ gem 'i18n-js'
 gem 'jquery-rails', '~> 4.0.0.beta2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+# Fixes problem with JS stopped working after switching page using turbolins
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
