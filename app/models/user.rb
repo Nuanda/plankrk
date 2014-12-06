@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   devise :rememberable,
          :trackable,
          :omniauthable,
-         :database_authenticatable,
          omniauth_providers: [:facebook, :google_oauth2]
 
   def self.from_omniauth(auth)
