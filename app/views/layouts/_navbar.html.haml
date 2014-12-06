@@ -5,13 +5,33 @@
         %a(href=root_path)
           = icon('cubes')
           = t('title')
-
       .col-xs-4.col-sm-1.dark-nav
         %ul.nav.navbar-nav.pull-right
           %li
-            .btn-group.btn-group-xs.navbar-btn
+            .btn-group.btn-group-xs
               = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if en?}"
               = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' unless en?}"
       #top-panel.col-xs-12.col-sm-8
         =yield :action_nav
         %ul.nav.navbar-nav.pull-right
+          - if current_user
+            %li.dropdown
+              %a.dropdown-toggle.account(href="#" data-toggle="dropdown")
+                .avatar
+                  %img.img-rounded{src: current_user.image}
+                = icon('angle-down', '', class: 'pull-right')
+                .user-mini.pull-right
+                  %span.welcome= t('welcome')
+                  %span= current_user.name
+              %ul.dropdown-menu
+                %li
+                  %a(href="#")
+                    = icon('user')
+                    %span= t('section.profile')
+                %li
+                  = link_to destroy_user_session_path, method: :delete do
+                    = icon('power-off', t('devise.logout'))
+          - else
+            %li
+              = link_to user_omniauth_authorize_path(:facebook), class: 'has_bottom_tooltip', title: t('devise.login.facebook') do
+                = icon 'facebook'

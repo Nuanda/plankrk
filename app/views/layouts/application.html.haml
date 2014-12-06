@@ -11,6 +11,7 @@
 
         #content.col-xs-12.col-sm-8
           = yield
+    = render 'layouts/flash'
     :javascript
       console.log('INIT: setting current locale');
       I18n.locale = "#{I18n.locale}";

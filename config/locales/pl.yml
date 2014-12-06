@@ -35,3 +35,8 @@ pl:
       WYKONANIE: Wykonawca
       ID2: ID2
       bip_link: strona w BIP
+
+  section:
+    profile: Profil
+
+  welcome: Witaj,
