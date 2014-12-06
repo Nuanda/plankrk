@@ -4,7 +4,8 @@ pl:
   devise:
     logout: "Wyloguj się"
     login:
-      facebook: "Zaloguj się przy użyciu Facebooka"
+      facebook: "Zaloguj się przy pomocy Facebook"
+      google: "Zaloguj się przy pomocy Google"
     confirmations:
       confirmed: "Twoje konto zostało aktywowane. Zostałeś pomyślnie zalogowany."
       send_instructions: "Za chwilę otrzymasz email z instrukcją jak aktywować konto."

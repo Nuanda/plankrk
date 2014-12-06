@@ -54,6 +54,7 @@ gem 'autoprefixer-rails'
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 
 group :development do
   gem 'quiet_assets'

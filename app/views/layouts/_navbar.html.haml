@@ -35,3 +35,6 @@
             %li
               = link_to user_omniauth_authorize_path(:facebook), class: 'has_bottom_tooltip', title: t('devise.login.facebook') do
                 = icon 'facebook'
+            %li
+              = link_to user_omniauth_authorize_path(:google_oauth2), class: 'has_bottom_tooltip', title: t('devise.login.google') do
+                = icon 'google'
