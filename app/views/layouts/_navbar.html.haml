@@ -8,12 +8,12 @@
       .col-xs-4.col-sm-1.dark-nav
         %ul.nav.navbar-nav.pull-right
           %li
-            .btn-group.btn-group-xs
+            .btn-group.btn-group-xs.navbar-btn
               = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if en?}"
               = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' unless en?}"
       #top-panel.col-xs-12.col-sm-8
         =yield :action_nav
-        %ul.nav.navbar-nav.pull-right
+        %ul.nav.navbar-nav.pull-right.panel-menu
           - if current_user
             %li.dropdown
               %a.dropdown-toggle.account(href="#" data-toggle="dropdown")
