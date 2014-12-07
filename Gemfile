@@ -52,6 +52,13 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'autoprefixer-rails'
 
+gem 'devise'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
+
+group :development do
+  gem 'quiet_assets'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +69,34 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Loading environment variables from .env
+  gem 'dotenv-rails'
+
+  # specs
+  gem 'rspec-rails', '~> 3.0'
+end
+
+group :test do
+  # specs
+  gem 'spring-commands-rspec'
+  gem 'capybara'
+
+  # model factories
+  gem 'factory_girl_rails', '~> 4.0'
+
+  # additional matchers
+  gem 'shoulda-matchers'
+
+  # automatically invoke spec after clicking ctr+s
+  gem 'guard-rspec', require: false
+  gem 'guard-spring'
+
+  # run spec inside transaction rollbacked ad the end
+  gem 'database_cleaner'
+
+  # fake data generator
+  gem 'faker'
 end
 
 gem 'rails_12factor', group: :production

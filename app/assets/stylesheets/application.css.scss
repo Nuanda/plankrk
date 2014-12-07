@@ -13,10 +13,12 @@
  *= require leaflet
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- @import "font-awesome-sprockets";
- @import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
- @import 'layout';
+@import 'layout';
+@import 'flash';
+@import 'login'
