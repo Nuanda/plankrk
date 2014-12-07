@@ -41,22 +41,35 @@ class @ZoningMap
           layer.resetStyle(oldSelectedDistrictId)
         oldSelectedDistrictId = featureId
         layer.setFeatureStyle featureId, ->
-          color: color,
-          weight: 5,
+          color: color
+          weight: 5
           opacity: 1
 
     clickFunc = (e, color, layer) ->
       layer.resetStyle(oldClickedDistrictId)
       oldClickedDistrictId = e.layer.feature.id
       layer.setFeatureStyle e.layer.feature.id, ->
-        color: color,
-        weight: 5,
+        color: color
+        weight: 5
         opacity: 1
+
+    @detailedZoning.on 'load', (e) =>
+      # Switch district countours off when detailed zoning is shown
+      @zoningMap.removeLayer @districtContours
+
+    @districtClickCallback = (e) =>
+      # Zoom to the district
+      district = @districtContours.getFeature e.layer.feature.id
+      @zoningMap.fitBounds district.getBounds()
+      # Query detailed zoning for that district only and show it
+      @detailedZoning.setWhere 'OGLOSZENIE="' + e.layer.feature.properties.OGLOSZENIE + '"'
+      @zoningMap.addLayer @detailedZoning
 
     @districtContours.on 'mouseover', (e) =>
       mouseoverFunc(e, '#60ba39', @districtContours)
     @districtContours.on 'click', (e) =>
       clickFunc(e, '#326E18', @districtContours)
+      @districtClickCallback(e)
 
     @detailedZoning.on 'mouseover', (e) =>
       mouseoverFunc(e, '#dd4439', @detailedZoning)
@@ -64,7 +77,7 @@ class @ZoningMap
       clickFunc(e, '#B5423A', @detailedZoning)
 
     # Binding popup templates to features of both layers, to be shown on feature click
-    PopupTemplates.bindPopup @districtContours, PopupTemplates.districtPopupTemplate()
+#    PopupTemplates.bindPopup @districtContours, PopupTemplates.districtPopupTemplate()
     PopupTemplates.bindPopup @detailedZoning, PopupTemplates.zonePopupTemplate()
 
     # Let's start with district contours
