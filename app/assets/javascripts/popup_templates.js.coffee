@@ -8,7 +8,7 @@ class @PopupTemplates
 
   # Popup templates for features; what is displayed depends on the returned WFS server feature data
   # Run as dynamic functions in order to be able to use proper locales
-  @districtPopupTemplate: -> """
+  @districtPopupTemplate = -> """
       <h3>{NAZWA}{NR_PLANU}</h3>#{I18n.t('krakow.mpzp.Status')}: {STATUS}<br>
       #{I18n.t('map.dates')}:<br><small>
         #{I18n.t('krakow.mpzp.DATA_PRZYS')}: {DATA_PRZYS}<br>
@@ -21,7 +21,7 @@ class @PopupTemplates
       <small>#{I18n.t('krakow.mpzp.FID')}: {FID}</small>
     """
 
-  @zonePopupTemplate: -> """
+  @zonePopupTemplate = -> """
     <h3>{OZNACZENIE} ({RODZAJ_OZN})</h3>
     #{I18n.t('map.dates')}:<br><small>
       #{I18n.t('krakow.mpzp.DATA_AKTUA')}: {DATA_AKTUA}<br>
