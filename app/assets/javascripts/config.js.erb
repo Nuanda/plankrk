@@ -2,6 +2,15 @@ console.log('INIT: Loading global config');
 
 if (!this.Config) {
   this.Config = {};
-  this.Config.ZONING_MAP_SERVER_BASE_URL = "<%= Rails.configuration.constants['krakow']['zoning_map_sever_base_url'] %>";
+  this.Config.ZONING_MAP_SERVER_BASE_URL =
+    "<%= Rails.configuration.constants['krakow']['zoning_map_sever_base_url'] %>";
+  this.Config.MAX_BOUNDS_WEST =
+    "<%= Rails.configuration.constants['krakow']['max_bounds']['west'] %>";
+  this.Config.MAX_BOUNDS_EAST =
+    "<%= Rails.configuration.constants['krakow']['max_bounds']['east'] %>";
+  this.Config.MAX_BOUNDS_SOUTH =
+    "<%= Rails.configuration.constants['krakow']['max_bounds']['south'] %>";
+  this.Config.MAX_BOUNDS_NORTH =
+    "<%= Rails.configuration.constants['krakow']['max_bounds']['north'] %>";
   I18n.defaultLocale = "<%= I18n.default_locale %>";
 }

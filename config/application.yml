@@ -2,6 +2,11 @@
 defaults: &defaults
   krakow:
     zoning_map_sever_base_url: http://msip.um.krakow.pl/arcgis/rest/services/BP_MPZP/MapServer/
+    max_bounds:
+      west: 19.79223802299622
+      south: 49.96766514062150
+      east: 20.20907913224060
+      north: 50.12550879764089
 
 development:
   <<: *defaults
