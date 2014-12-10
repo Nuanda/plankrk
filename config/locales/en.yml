@@ -1,8 +1,11 @@
 en:
-  title: Kraków Planning App
+  title: Kraków Zoning App
 
   home:
     header: Let's plan Kraków together!
+
+  nav:
+    zoom_out: Show all districts
 
   map:
     plan: Plan name
@@ -35,6 +38,7 @@ en:
       WYKONANIE: Implementator
       ID2: ID2
       bip_link: BIP link
+
   section:
     profile: Profile
 

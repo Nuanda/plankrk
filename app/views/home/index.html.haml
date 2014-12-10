@@ -1,7 +1,9 @@
 =content_for :action_nav do
-  %ul.nav.navbar-nav
+  %ul.nav.navbar-nav.panel-menu
     %li
-      = link_to '#', id: 'zoning-switch' do
-        = icon('search-plus')
+      = link_to '#', id: 'zoom-out-button',
+      data: {toggle: 'tooltip', placement: 'bottom'},
+      title: t('nav.zoom_out') do
+        = icon 'expand'
 
 #zoning-map
