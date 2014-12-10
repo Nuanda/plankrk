@@ -1,8 +1,15 @@
 pl:
-  title: Planuj Kraków
+  title: Zaplanujmy Kraków
 
   home:
     header: Wspólnie zaplanujmy Kraków!
+
+  nav:
+    tabs:
+      info: Informacje
+      messages: Wiadomości
+      amendments: Uwagi formalne
+      profile: Profil
 
   map:
     plan: Nazwa planu

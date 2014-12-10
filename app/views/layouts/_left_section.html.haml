@@ -8,13 +8,18 @@
         %a(href="#messages-tab" data-toggle="tab")
           = icon('weixin')
       %li
-        %a(href="#formal-comments-tab" data-toggle="tab")
+        %a(href="#amendments-tab" data-toggle="tab")
           = icon('files-o')
       %li
         %a(href="#profile-tab" data-toggle="tab")
           = icon('user')
+
   .col-sm-11.tab-content
-    #info-tab.tab-pane.active Info
-    #messages-tab.tab-pane Messages
-    #formal-comments-tab.tab-pane Formal comments
-    #profile-tab.tab-pane Profile
+    #info-tab.tab-pane.active
+      = t 'nav.tabs.info'
+    #messages-tab.tab-pane
+      = t 'nav.tabs.messages'
+    #amendments-tab.tab-pane
+      = t 'nav.tabs.amendments'
+    #profile-tab.tab-pane
+      = t 'nav.tabs.profile'
