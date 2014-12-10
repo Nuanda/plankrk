@@ -33,8 +33,12 @@
                     = icon('power-off', t('devise.logout'))
           - else
             %li
-              = link_to user_omniauth_authorize_path(:facebook), class: 'has_bottom_tooltip', title: t('devise.login.facebook') do
+              = link_to user_omniauth_authorize_path(:facebook),
+              data: {toggle: 'tooltip', placement: 'bottom'},
+              title: t('devise.login.facebook') do
                 = icon('facebook-square', '', class: 'facebook')
             %li
-              = link_to user_omniauth_authorize_path(:google_oauth2), class: 'has_bottom_tooltip', title: t('devise.login.google') do
+              = link_to user_omniauth_authorize_path(:google_oauth2),
+              data: {toggle: 'tooltip', placement: 'bottom'},
+              title: t('devise.login.google') do
                 = icon('google-plus-square', '', class: 'google')
