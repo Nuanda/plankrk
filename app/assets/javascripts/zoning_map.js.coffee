@@ -56,6 +56,8 @@ class @ZoningMap
     @detailedZoning.on 'load', (e) =>
       # Switch district countours off when detailed zoning is shown
       @zoningMap.removeLayer @districtContours
+      # District tooltips are no longer useful now
+      $(oldTooltipElement).tooltip 'destroy'
 
     @districtClickCallback = (e) =>
       # Zoom to the district
@@ -65,14 +67,42 @@ class @ZoningMap
       @detailedZoning.setWhere 'OGLOSZENIE="' + e.layer.feature.properties.OGLOSZENIE + '"'
       @zoningMap.addLayer @detailedZoning
 
+    oldTooltipElement = null
+
+    @createDistrictTooltip = (e) =>
+      # Create new tooltip handler
+      $(e.originalEvent.fromElement).tooltip
+        title: e.layer.feature.properties.NAZWA
+        placement: 'right'
+        container: 'body'
+      # Show the tooltip and replace to the mouse locations
+      $(e.originalEvent.fromElement).tooltip 'show'
+      $('.tooltip').css 'top', e.originalEvent.pageY
+      $('.tooltip').css 'left', e.originalEvent.pageX + 10
+      # Save the svg element of that tooltip for later removing
+      oldTooltipElement = e.originalEvent.fromElement
+
     @districtContours.on 'mouseover', (e) =>
       mouseoverFunc(e, '#60ba39', @districtContours)
+      @createDistrictTooltip e
+
+    @districtContours.on 'mousemove', (e) =>
+      # Let the district name tooltip follow the mouse move
+      $('.tooltip').css 'top', e.originalEvent.pageY
+      $('.tooltip').css 'left', e.originalEvent.pageX + 10
+
+    @districtContours.on 'mouseout', (e) =>
+      @districtContours.resetStyle(oldSelectedDistrictId)
+      $(oldTooltipElement).tooltip 'destroy'
+
     @districtContours.on 'click', (e) =>
       clickFunc(e, '#326E18', @districtContours)
       @districtClickCallback(e)
 
     @detailedZoning.on 'mouseover', (e) =>
       mouseoverFunc(e, '#dd4439', @detailedZoning)
+    @detailedZoning.on 'mouseout', (e) =>
+      @detailedZoning.resetStyle(oldSelectedDistrictId)
     @detailedZoning.on 'click', (e) =>
       clickFunc(e, '#B5423A', @detailedZoning)
 
