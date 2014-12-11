@@ -16,5 +16,10 @@ $ ->
     flash.show()
     setTimeout (-> flash.fadeOut()), 5000
 
-  # Bottom tooltip
-  $('.has_bottom_tooltip').tooltip(placement: 'bottom')
+  # Tooltips
+  $('[data-toggle="tooltip"]').each ->
+    tooltipPlacement = $(this).attr 'data-placement'
+    if tooltipPlacement
+      $(this).tooltip placement: tooltipPlacement
+    else
+      $(this).tooltip

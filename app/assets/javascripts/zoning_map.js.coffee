@@ -84,14 +84,19 @@ class @ZoningMap
     @districtContours.addTo @zoningMap
 
 
-    # A temporary switch for dev/demo purposes - should be replaced in the future
-    $('#zoning-switch').on 'click', =>
-      if @zoningMap.hasLayer @districtContours
-        @zoningMap.removeLayer @districtContours
-      else
+    $('#zoom-out-button').on 'click', =>
+      # Assure only districts are shown
+      @zoningMap.removeLayer @detailedZoning
+      unless @zoningMap.hasLayer @districtContours
         @zoningMap.addLayer @districtContours
-
-      if @zoningMap.hasLayer @detailedZoning
-        @zoningMap.removeLayer @detailedZoning
-      else
-        @zoningMap.addLayer @detailedZoning
+      # Zoom the map to proper bounds
+      southWest = L.latLng Config.MAX_BOUNDS_SOUTH, Config.MAX_BOUNDS_WEST
+      northEast = L.latLng Config.MAX_BOUNDS_NORTH, Config.MAX_BOUNDS_EAST
+      bounds = L.latLngBounds southWest, northEast
+      @zoningMap.fitBounds bounds
+      # NOTE: alternative dynamis version, that queries the server for bounds
+      #       this works much, much slower
+      #       for proper UX this would require some kind of caching
+#      @districtContours.query().run (error, geojson, response) =>
+#        bounds = L.geoJson(geojson).getBounds()
+#        @zoningMap.fitBounds bounds

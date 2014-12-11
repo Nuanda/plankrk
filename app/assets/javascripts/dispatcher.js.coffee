@@ -11,7 +11,7 @@ class Dispatcher
 
     return false unless dispatch
 
-    console.log "#{dispatch} dispatched"
+    console.log "INIT: #{dispatch} dispatched"
 
     switch dispatch
       when 'home:index'

@@ -4,6 +4,9 @@ pl:
   home:
     header: Wspólnie zaplanujmy Kraków!
 
+  nav:
+    zoom_out: Pokaż całą mapę
+
   map:
     plan: Nazwa planu
     dates: Harmonogram
