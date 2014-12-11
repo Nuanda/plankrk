@@ -1,17 +1,26 @@
 .row
   .col-sm-1
     %ul.nav.nav-stacked.main-menu
+      - tab_data = { toggle: 'tab', placement: 'right' }
       %li.active
-        %a(href="#info-tab" data-toggle="tab")
+        %a{ href: '#info-tab',
+            data: tab_data,
+            title: t('nav.tabs.info') }
           = icon('map-marker')
       %li
-        %a(href="#messages-tab" data-toggle="tab")
+        %a{ href: '#messages-tab',
+            data: tab_data,
+            title: t('nav.tabs.messages') }
           = icon('weixin')
       %li
-        %a(href="#amendments-tab" data-toggle="tab")
+        %a{ href: '#amendments-tab',
+            data: tab_data,
+            title: t('nav.tabs.amendments') }
           = icon('files-o')
       %li
-        %a(href="#profile-tab" data-toggle="tab")
+        %a{ href: '#profile-tab',
+            data: tab_data,
+            title: t('nav.tabs.profile') }
           = icon('user')
 
   .col-sm-11.tab-content

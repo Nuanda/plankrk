@@ -11,6 +11,7 @@
             .btn-group.btn-group-xs.navbar-btn
               = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if en?}"
               = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' unless en?}"
+
       #top-panel.col-xs-12.col-sm-8
         =yield :action_nav
         %ul.nav.navbar-nav.pull-right.panel-menu
@@ -34,11 +35,11 @@
           - else
             %li
               = link_to user_omniauth_authorize_path(:facebook),
-              data: {toggle: 'tooltip', placement: 'bottom'},
+              data: { placement: 'bottom' },
               title: t('devise.login.facebook') do
                 = icon('facebook-square', '', class: 'facebook')
             %li
               = link_to user_omniauth_authorize_path(:google_oauth2),
-              data: {toggle: 'tooltip', placement: 'bottom'},
+              data: { placement: 'bottom' },
               title: t('devise.login.google') do
                 = icon('google-plus-square', '', class: 'google')

@@ -17,9 +17,8 @@ $ ->
     setTimeout (-> flash.fadeOut()), 5000
 
   # Tooltips
-  $('[data-toggle="tooltip"]').each ->
-    tooltipPlacement = $(this).attr 'data-placement'
-    if tooltipPlacement
-      $(this).tooltip placement: tooltipPlacement
-    else
-      $(this).tooltip
+  $('body').tooltip
+    delay:
+      show: 300
+      hide: 0
+    selector: '[title]'
