@@ -7,9 +7,9 @@ pl:
   nav:
     zoom_out: Pokaż całą mapę
     tabs:
-      info: Informacje
+      info: Informacje o planie
       messages: Wiadomości
-      amendments: Uwagi formalne
+      amendments: Formalne uwagi do planu
       profile: Profil
 
   map:

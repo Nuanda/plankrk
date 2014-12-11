@@ -7,9 +7,9 @@ en:
   nav:
     zoom_out: Show all districts
     tabs:
-      info: Information
+      info: District plan information
       messages: Messages
-      amendments: Amendment requests
+      amendments: Formal amendment requests
       profile: Profile
 
   map:
@@ -36,11 +36,11 @@ en:
       IDTXT: IDTXT
       NAZWA: District name
       STATUS: Status
-      PRZYSTAPIE: Inception
-      DATA_PRZYS: Date of inception
+      PRZYSTAPIE: Introduction
+      DATA_PRZYS: Introduction date
       NR_PLANU: Plan ID
       PROWADZACY: Responsible official
-      WYKONANIE: Implementator
+      WYKONANIE: Chief editor
       ID2: ID2
       bip_link: BIP link
 
