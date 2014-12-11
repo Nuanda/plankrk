@@ -6,6 +6,11 @@ en:
 
   nav:
     zoom_out: Show all districts
+    tabs:
+      info: Information
+      messages: Messages
+      amendments: Amendment requests
+      profile: Profile
 
   map:
     plan: Plan name
@@ -22,11 +27,11 @@ en:
       RODZAJ_OZN: Zone type
       DATA_AKTUA: Update date
       NAZWA_MPZP: District name
-      DATA_UCHWA: Date of confirmation
-      UCHWALENIE: Confirmation
+      DATA_UCHWA: Enactment date
+      UCHWALENIE: Enactment
       OGLOSZENIE: Announcement
-      DATA_DUWM: Date of announcement
-      DATA_OBOWI: Date of implementation
+      DATA_DUWM: Announcement date
+      DATA_OBOWI: Date of entry into force
       WWW: WWW
       IDTXT: IDTXT
       NAZWA: District name
@@ -34,7 +39,7 @@ en:
       PRZYSTAPIE: Inception
       DATA_PRZYS: Date of inception
       NR_PLANU: Plan ID
-      PROWADZACY: Responsible
+      PROWADZACY: Responsible official
       WYKONANIE: Implementator
       ID2: ID2
       bip_link: BIP link
