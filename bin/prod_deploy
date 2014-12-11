@@ -1,0 +1,22 @@
+#!/bin/bash
+read -r -p "Confirm deployment to PRODUCTION? Type 'yes' to continue " response
+if [ $response == "yes" ]
+then
+ git checkout -B prod
+ # Precompile assets and commit to github
+ bundle exec rake assets:precompile RAILS_ENV=production DEVISE_SECRET_KEY=2e0a78aef668414d3e9da039524a85d7a2e96564eaa10c033d4a516601bc511c51a7a0abb1a3165f052268b69072063b036bd5902d5a28584479eb88fe8cfeca
+ git add .
+ git commit -m 'recompiling assets'
+
+ # Push to heroku
+ git push heroku prod:master -f
+
+ # Run migrations
+ heroku run rake db:migrate --app plankrk
+
+ # Do whatever you need with your app (seeds, data, etc..)
+
+
+ # Restart app
+ heroku restart --app plankrk
+fi
