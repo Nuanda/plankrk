@@ -1,8 +1,14 @@
 class @ZoningMap
   constructor: ->
     $('#zoning-map').css('min-height', window.innerHeight - 50)
+
     # Create a map in the "map" div, set the view to Kraków and zoom level to 13
-    @zoningMap = L.map('zoning-map').setView [50.06, 19.95], 13
+    @zoningMap = L.map('zoning-map', { zoomControl: false })
+      .setView [50.06, 19.95], 13
+    new L.Control.Zoom(
+      zoomInTitle: I18n.t('map.zoom_in')
+      zoomOutTitle: I18n.t('map.zoom_out')
+    ).addTo @zoningMap
 
     # Add an OpenStreetMap tile layer; other tiles could be used as well - see below
     # NOTE: please do not localize the 'contributors' word here, it's kind of ToU requirement

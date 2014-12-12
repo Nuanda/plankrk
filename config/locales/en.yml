@@ -5,6 +5,8 @@ en:
     header: Let's plan Kraków together!
 
   nav:
+    to_en: Switch language to English
+    to_pl: Przełącz język na polski
     zoom_out: Show all districts
     tabs:
       info: District plan information
@@ -16,6 +18,8 @@ en:
     plan: Plan name
     dates: Dates
     no_date: no date given
+    zoom_in: Zoom in
+    zoom_out: Zoom out
 
   krakow:
     mpzp:

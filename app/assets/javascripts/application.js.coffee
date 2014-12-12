@@ -21,4 +21,5 @@ $ ->
     delay:
       show: 300
       hide: 0
+    container: 'body'
     selector: '[title]'
