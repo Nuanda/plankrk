@@ -9,8 +9,14 @@
         %ul.nav.navbar-nav.pull-right
           %li
             .btn-group.btn-group-xs.navbar-btn
-              = link_to 'EN', { locale: :en }, class: "btn btn-default #{'active' if en?}"
-              = link_to 'PL', { locale: :pl }, class: "btn btn-default #{'active' unless en?}"
+              = link_to 'EN', { locale: :en },
+                title: t('nav.to_en'),
+                data: { placement: 'bottom' },
+                class: "btn btn-default #{'active' if en?}"
+              = link_to 'PL', { locale: :pl },
+                title: t('nav.to_pl'),
+                data: { placement: 'bottom' },
+                class: "btn btn-default #{'active' unless en?}"
 
       #top-panel.col-xs-12.col-sm-8
         =yield :action_nav

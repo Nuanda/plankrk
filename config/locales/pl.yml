@@ -5,6 +5,8 @@ pl:
     header: Wspólnie zaplanujmy Kraków!
 
   nav:
+    to_en: Switch language to English
+    to_pl: Przełącz język na polski
     zoom_out: Pokaż całą mapę
     tabs:
       info: Informacje o planie
@@ -16,6 +18,8 @@ pl:
     plan: Nazwa planu
     dates: Harmonogram
     no_date: brak daty
+    zoom_in: Przybliż mapę
+    zoom_out: Oddal mapę
 
   krakow:
     mpzp:
