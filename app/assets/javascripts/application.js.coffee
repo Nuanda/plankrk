@@ -7,6 +7,7 @@
 #= require bootstrap-sprockets
 #= require leaflet
 #= require esri-leaflet
+#= require js-routes
 #= require_tree .
 
 $ ->
