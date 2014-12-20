@@ -72,6 +72,7 @@ class @ZoningMap
       # Query detailed zoning for that district only and show it
       @detailedZoning.setWhere 'OGLOSZENIE="' + e.layer.feature.properties.OGLOSZENIE + '"'
       @zoningMap.addLayer @detailedZoning
+      DistrictInfoManager.showDistrictInfo e.layer.feature.properties
 
     oldTooltipElement = null
 
@@ -130,7 +131,7 @@ class @ZoningMap
       northEast = L.latLng Config.MAX_BOUNDS_NORTH, Config.MAX_BOUNDS_EAST
       bounds = L.latLngBounds southWest, northEast
       @zoningMap.fitBounds bounds
-      # NOTE: alternative dynamis version, that queries the server for bounds
+      # NOTE: alternative dynamic version, that queries the server for bounds
       #       this works much, much slower
       #       for proper UX this would require some kind of caching
 #      @districtContours.query().run (error, geojson, response) =>
