@@ -18,6 +18,8 @@ en:
     plan: Plan name
     dates: Dates
     no_date: no date given
+    no_data: no data
+    additional_data: Additional data
     zoom_in: Zoom in
     zoom_out: Zoom out
 
@@ -27,6 +29,8 @@ en:
       Shape: Shape
       BIP: BIP
       Status: Status
+      OBOWIĄZUJĄCY: in force
+      SPORZĄDZANY: in preparation
       OZNACZENIE: Zone use
       RODZAJ_OZN: Zone type
       DATA_AKTUA: Update date
@@ -42,11 +46,11 @@ en:
       STATUS: Status
       PRZYSTAPIE: Introduction
       DATA_PRZYS: Introduction date
-      NR_PLANU: Plan ID
+      NR_PLANU: id
       PROWADZACY: Responsible official
       WYKONANIE: Chief editor
       ID2: ID2
-      bip_link: BIP link
+      bip_link: link to BIP plan section
 
   section:
     profile: Profile

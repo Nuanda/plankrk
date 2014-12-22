@@ -27,6 +27,8 @@ gem 'rails-assets-leaflet'
 gem 'rails-assets-esri-leaflet', '1.0.0.rc.4'
 # Helps with translating strings directly in js/cs
 gem 'i18n-js'
+# For Rails route helpers in js/cs code
+gem 'js-routes'
 
 # Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.0.beta2'

@@ -7,4 +7,5 @@ module ApplicationHelper
   def en?
     I18n.locale == :en
   end
+
 end

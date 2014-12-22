@@ -18,6 +18,8 @@ pl:
     plan: Nazwa planu
     dates: Harmonogram
     no_date: brak daty
+    no_data: brak danych
+    additional_data: Dane dodatkowe
     zoom_in: Przybliż mapę
     zoom_out: Oddal mapę
 
@@ -27,6 +29,8 @@ pl:
       Shape: Kształt
       BIP: BIP
       Status: Status
+      OBOWIĄZUJĄCY: obowiązujący
+      SPORZĄDZANY: sporządzany
       OZNACZENIE: Oznaczenie
       RODZAJ_OZN: Typ oznaczenia
       DATA_AKTUA: Data aktualizacji
@@ -42,11 +46,11 @@ pl:
       STATUS: Status
       PRZYSTAPIE: Przystąpienie
       DATA_PRZYS: Data przystąpienia
-      NR_PLANU: Numer planu
+      NR_PLANU: nr
       PROWADZACY: Prowadzący
       WYKONANIE: Wykonawca
       ID2: ID2
-      bip_link: strona w BIP
+      bip_link: strona w BIP dotycząca planu
 
   section:
     profile: Profil
