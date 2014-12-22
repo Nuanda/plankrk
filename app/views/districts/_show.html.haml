@@ -19,8 +19,8 @@
     - %w(DATA_PRZYS DATA_UCHWA DATA_DUWM DATA_OBOWI).each do |key|
       %dt= t "krakow.mpzp.#{key}"
       %dd
-        - if @data[key].to_i > 0
-          = Time.at(@data[key].to_i / 1000).strftime('%d.%m.%Y')
+        - if @data[key].present?
+          = mseconds_since_epoch_to_time @data[key]
         - else
           %em.text-muted
             = surround '(',')' do
