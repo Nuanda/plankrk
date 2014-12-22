@@ -31,7 +31,7 @@
   %dd
 
   %small
-    - %w(PROWADZACY WYKONANIE).each do |key|
+    - %w(PROWADZACY WYKONANIE FID).each do |key|
       %dt= t "krakow.mpzp.#{key}"
       %dd
         - if @data[key].present?
@@ -40,9 +40,6 @@
           %em.text-muted
             = surround '(',')' do
               = t 'map.no_data'
-
-    %dt= t 'krakow.mpzp.FID'
-    %dd= @data[:FID]
 
 
 %dl.dl-horizontal
