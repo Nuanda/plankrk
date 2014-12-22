@@ -13,7 +13,7 @@ RSpec.describe DistrictsHelper, type: :helper do
     end
 
     it 'returns epoch with negative input' do
-      expect(mseconds_since_epoch_to_time(-500000)).to eq '01.01.1970'
+      expect(mseconds_since_epoch_to_time(-5000000)).to eq '31.12.1969'
     end
 
   end
