@@ -4,6 +4,26 @@ pl:
   home:
     header: Wspólnie zaplanujmy Kraków!
 
+  instructions:
+    welcome: Witamy w %{title}
+    what_you_see: |
+      Z prawej strony widzisz mapę miasta %{city} z miejscowymi planami
+      zagospodarowania zaznaczonymi na zielono. Miejsca puste oznaczają, że
+      dla tych dzielnic plany zagospodarowania jeszcze nie powstały.
+    basics:
+      title: Operacje
+      click_district:
+        label: kliknięcie zielonego obszaru
+        effect: powiększa obszar planu do szczegółowych stref zagospodarowania
+      zoom_out:
+        label: (powyżej mapy)
+        effect: oddala do widoku całego miasta
+      fb_g_plus:
+        label: (powyżej mapy)
+        effect: zaloguj się lub zarejestruj
+    wishes: |
+      Życzymy Ci owocnej współpracy przy planowaniu swojego ukochanego miasta!
+
   nav:
     to_en: Switch language to English
     to_pl: Przełącz język na polski

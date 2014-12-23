@@ -4,6 +4,26 @@ en:
   home:
     header: Let's plan Kraków together!
 
+  instructions:
+    welcome: Welcome to %{title}
+    what_you_see: |
+      What you see to your right is a map of %{city} with planning zones shown
+      as a green overlay. As you see, some parts of the city are blank - this
+      means the zoning for that parts is yet to be prepared.
+    basics:
+      title: Basics
+      click_district:
+        label: click a district
+        effect: zooms in on a district and shows detailed zoning plan
+      zoom_out:
+        label: (top bar)
+        effect: zooms out to the entire city
+      fb_g_plus:
+        label: (top bar)
+        effect: login or register with your network account
+    wishes: |
+      We wish you fruitful collaboration when co-zoning your beloved city!
+
   nav:
     to_en: Switch language to English
     to_pl: Przełącz język na polski
