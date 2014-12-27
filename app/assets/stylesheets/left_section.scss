@@ -1,0 +1,23 @@
+/** LEFT SECTION styles **/
+#left-section {
+  margin-right: -15px;
+
+  ul {
+    @extend .nav;
+    @extend .nav-stacked;
+    @extend .main-menu;
+
+    width: 40px;
+    float: left;
+
+    li > a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .tab-content {
+    margin-left: 25px;
+    padding-left: 15px;
+  }
+}

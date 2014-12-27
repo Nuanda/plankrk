@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/mkasztelnik/devoops-rails.git
+  revision: ff3dca879bfe29c6e4b9bf04168b1643cb23a143
+  branch: v2
+  specs:
+    devoops-rails (2.0.0.0)
+      autoprefixer-rails (~> 4.0)
+      bootstrap-sass (~> 3.3)
+      font-awesome-sass (~> 4.2)
+      jquery-rails (~> 4.0)
+      railties (>= 3.2.16)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -323,6 +335,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  devoops-rails!
   dotenv-rails
   factory_girl_rails (~> 4.0)
   faker
