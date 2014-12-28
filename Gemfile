@@ -3,14 +3,14 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
 # This declaration is required for proper Heroku deployment
-ruby '2.1.4'
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.rc3'
+gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'sass-rails', '~> 5.0.0'
 # Use HAML for view templates
 gem 'haml-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,7 +31,7 @@ gem 'i18n-js'
 gem 'js-routes'
 
 # Use jQuery as the JavaScript library
-gem 'jquery-rails', '~> 4.0.0.beta2'
+gem 'jquery-rails', '~> 4.0.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Fixes problem with JS stopped working after switching page using turbolins
