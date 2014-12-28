@@ -4,12 +4,12 @@
   %body(data-dispatch=body_data_dispatch)
     = render 'layouts/navbar'
 
-    .container-fluid
+    #main.container-fluid
       .row
-        .col-xs-2.col-sm-4
+        .col-xs-2.col-sm-5
           = render 'layouts/left_section'
 
-        #content.col-xs-12.col-sm-8
+        #content.col-xs-12.col-sm-7.full-content
           = yield
     = render 'layouts/flash'
     :javascript

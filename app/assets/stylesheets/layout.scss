@@ -1,0 +1,36 @@
+.logo {
+  color: #ffffff;
+  font-family: "Righteous",cursive;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+a.logo:hover {
+  color: #525252;
+  text-decoration: none;
+}
+
+.navbar-btn {
+  padding-top: 5px;
+}
+
+.tab-content {
+  background: rgba(0, 0, 0, 0.1);
+  color: #f0f0f0;
+  padding-bottom: 3000px !important;
+  margin-bottom: -2980px !important;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.top-panel {
+  line-height: 50px;
+  height: 50px;
+  background: #dbdbdb;
+}
+
+.top-left-panel {
+  line-height: 50px;
+  height: 50px;
+  background: #525252;
+}

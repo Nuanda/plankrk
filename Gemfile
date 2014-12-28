@@ -53,6 +53,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'autoprefixer-rails'
+gem 'devoops-rails',
+    github: 'mkasztelnik/devoops-rails',
+    branch: 'v2'
 
 gem 'devise'
 gem 'omniauth-facebook'
