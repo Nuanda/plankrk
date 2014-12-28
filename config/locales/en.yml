@@ -42,6 +42,12 @@ en:
     additional_data: Additional data
     zoom_in: Zoom in
     zoom_out: Zoom out
+    start_discussion:
+      tooltip: Start new discussion about that zone.
+      label: New discussion
+    show_discussions:
+      tooltip: See current discussions about that zone.
+      label: See discussions
 
   krakow:
     mpzp:

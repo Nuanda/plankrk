@@ -8,28 +8,20 @@ class @PopupTemplates
 
   # Popup templates for features; what is displayed depends on the returned WFS server feature data
   # Run as dynamic functions in order to be able to use proper locales
-  @districtPopupTemplate = -> """
-      <h3>{NAZWA}{NR_PLANU}</h3>#{I18n.t('krakow.mpzp.Status')}: {STATUS}<br>
-      #{I18n.t('map.dates')}:<br><small>
-        #{I18n.t('krakow.mpzp.DATA_PRZYS')}: {DATA_PRZYS}<br>
-        #{I18n.t('krakow.mpzp.DATA_UCHWA')}: {DATA_UCHWA}<br>
-        #{I18n.t('krakow.mpzp.DATA_DUWM')}: {DATA_DUWM}<br>
-        #{I18n.t('krakow.mpzp.DATA_OBOWI')}: {DATA_OBOWI}<br></small>
-      #{I18n.t('krakow.mpzp.BIP')}: {BIP}<br>
-      #{I18n.t('krakow.mpzp.PROWADZACY')}: {PROWADZACY}<br>
-      #{I18n.t('krakow.mpzp.WYKONANIE')}: {WYKONANIE}<br>
-      <small>#{I18n.t('krakow.mpzp.FID')}: {FID}</small>
-    """
-
   @zonePopupTemplate = -> """
     <h3>{OZNACZENIE} ({RODZAJ_OZN})</h3>
-    #{I18n.t('map.dates')}:<br><small>
-      #{I18n.t('krakow.mpzp.DATA_AKTUA')}: {DATA_AKTUA}<br>
-      #{I18n.t('krakow.mpzp.DATA_UCHWA')}: {DATA_UCHWA}<br>
-      #{I18n.t('krakow.mpzp.DATA_DUWM')}: {DATA_DUWM}<br>
-      #{I18n.t('krakow.mpzp.DATA_OBOWI')}: {DATA_OBOWI}<br></small>
     #{I18n.t('map.plan')}: {NAZWA_MPZP}<br>
-    <small>#{I18n.t('krakow.mpzp.FID')}: {FID}</small>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-sm"
+        title="#{I18n.t('map.show_discussions.tooltip')}">
+        <i class="fa fa-comments-o"></i>
+      </button>
+      <button type="button" class="btn btn-sm"
+        title="#{I18n.t('map.start_discussion.tooltip')}">
+        <i class="fa fa-plus-square"></i>
+      </button>
+    </div><br>
+    <small><small>#{I18n.t('krakow.mpzp.FID')}: {FID}</small></small>
   """
 
   @dateNames = ['DATA_UCHWA', 'DATA_PRZYS', 'DATA_DUWM', 'DATA_OBOWI', 'DATA_AKTUA']

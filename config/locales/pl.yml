@@ -42,6 +42,12 @@ pl:
     additional_data: Dane dodatkowe
     zoom_in: Przybliż mapę
     zoom_out: Oddal mapę
+    start_discussion:
+      tooltip: Rozpocznij nową dyskusję na temat tego obszaru.
+      label: Nowa dyskusja
+    show_discussions:
+      tooltip: Zobacz toczące się dyskusje na temat tego obszaru.
+      label: Zobacz dyskusje
 
   krakow:
     mpzp:

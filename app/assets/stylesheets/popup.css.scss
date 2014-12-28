@@ -1,0 +1,28 @@
+#zoning-map {
+  .leaflet-popup-close-button {
+    top: 3px;
+    right: 3px;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.4);
+
+    a {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .leaflet-popup-content {
+      background: rgba(40, 90, 130, 0.7);
+      color: #fff;
+      font-size: 14px;
+      padding: 8px;
+      border-radius: 8px;
+      margin: 3px;
+
+      .btn {
+        background-color: #DFD271;
+        border-color: #fff;
+      }
+    }
+  }
+}
