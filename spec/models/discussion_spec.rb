@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Discussion do
 
-  # it { should validate_presence_of :fid }
+  it { should validate_presence_of :fid }
 
   describe '#about_fid' do
 
