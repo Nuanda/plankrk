@@ -7,9 +7,9 @@
           title: t('nav.tabs.info') }
         = icon('map-marker')
     %li
-      %a{ href: '#messages-tab',
+      %a{ href: '#discussions-tab',
           data: tab_data,
-          title: t('nav.tabs.messages') }
+          title: t('nav.tabs.discussions') }
         = icon('weixin')
     %li
       %a{ href: '#amendments-tab',
@@ -25,8 +25,8 @@
   .tab-content
     #info-tab.tab-pane.active
       = render 'home/instructions'
-    #messages-tab.tab-pane
-      = t 'nav.tabs.messages'
+    #discussions-tab.tab-pane
+      = t 'nav.tabs.discussions'
     #amendments-tab.tab-pane
       = t 'nav.tabs.amendments'
     #profile-tab.tab-pane
