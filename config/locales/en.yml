@@ -30,9 +30,14 @@ en:
     zoom_out: Show all districts
     tabs:
       info: District plan information
-      messages: Messages
+      discussions: Discussions
       amendments: Formal amendment requests
       profile: Profile
+
+  discussions:
+    title: Current discussions about
+    district: District
+    zone: Zone
 
   map:
     plan: Plan name

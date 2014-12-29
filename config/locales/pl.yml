@@ -30,9 +30,14 @@ pl:
     zoom_out: Pokaż całą mapę
     tabs:
       info: Informacje o planie
-      messages: Wiadomości
+      discussions: Dyskusje
       amendments: Formalne uwagi do planu
       profile: Profil
+
+  discussions:
+    title: Obecne dyskusje na temat
+    district: Planu
+    zone: Strefy
 
   map:
     plan: Nazwa planu
