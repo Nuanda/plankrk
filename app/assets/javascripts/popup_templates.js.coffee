@@ -1,4 +1,16 @@
 class @PopupTemplates
+  @initialize = ->
+    $('body').on 'click', 'button[data-fid]', ->
+      discussionsPath = Routes.discussions_path(
+        locale: I18n.locale
+        fid: $(this).attr('data-fid')
+        district: $(this).attr('data-district')
+        zone: $(this).attr('data-zone')
+      )
+      $.get discussionsPath, (data) ->
+        $('#discussions-tab').html data
+        $('#left-section a[href="#discussions-tab"]').tab 'show'
+
   @parseEsriDate = (esriFieldTypeDate) ->
     if esriFieldTypeDate == null
       "<i>(#{I18n.t('map.no_date')})</i>"
@@ -13,6 +25,9 @@ class @PopupTemplates
     #{I18n.t('map.plan')}: {NAZWA_MPZP}<br>
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-sm"
+        data-fid="{FID}"
+        data-district="{NAZWA_MPZP}"
+        data-zone="{OZNACZENIE}"
         title="#{I18n.t('map.show_discussions.tooltip')}">
         <i class="fa fa-comments-o"></i>
       </button>

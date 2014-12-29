@@ -16,3 +16,4 @@ class Dispatcher
     switch dispatch
       when 'home:index'
         new ZoningMap
+        PopupTemplates.initialize()
