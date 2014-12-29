@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20141229095838) do
   enable_extension "plpgsql"
 
   create_table "discussions", force: :cascade do |t|
-    t.integer  "fid",                                     null: false
-    t.string   "title",      default: "Discussion title"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.integer  "fid",        null: false
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
