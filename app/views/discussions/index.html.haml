@@ -1,0 +1,22 @@
+%h4.text-center
+  = t 'discussions.title'
+
+%dl.dl-horizontal
+  %dt= t 'discussions.district'
+  %dd= params[:district]
+  - if params[:zone].present?
+    %dt= t 'discussions.zone'
+    %dd= params[:zone]
+
+- if @discussions.present?
+
+  %ul.list-group
+    - @discussions.each do |discussion|
+      %li.list-group-item
+        -#%span.badge TEMP use it for comments count, new comment notif etc.
+        = discussion.title
+
+%small
+  %i
+    FID:
+    = params[:fid]

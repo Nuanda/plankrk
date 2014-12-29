@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users,
              controllers: {
                 omniauth_callbacks: 'users/omniauth_callbacks'
@@ -14,5 +15,7 @@ Rails.application.routes.draw do
     root 'home#index'
 
     resources :districts, only: [:show]
+    resources :discussions, only: [:index]
   end
+
 end
