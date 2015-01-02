@@ -13,27 +13,26 @@ class @Discussions
       dsq.type = 'text/javascript'
       dsq.async = true
       dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
+      (document.getElementsByTagName('head')[0] ||
+       document.getElementsByTagName('body')[0]).appendChild(dsq)
 
     $('body').on 'show.bs.collapse', '.discussion-body', ->
-      console.log $(this).attr('data-discussion')
+      discussionId = $(this).attr('data-discussion')
       $('#disqus_thread').remove()
       discussionPath = Routes.discussion_path(
         locale: I18n.locale
-        id: $(this).attr('data-discussion')
+        id: discussionId
       )
       $.get discussionPath, (data) =>
-        $("[data-discussion=#{$(this).attr('data-discussion')}] .panel-body").html data
+        $("[data-discussion=#{discussionId}] .panel-body").html data
 
 
-  @reset = (newIdentifier) ->
-    disqus_identifier = newIdentifier
-    disqus_url = 'http://localhost:3000/' + newIdentifier
+  @reset = (discussionId) ->
+    # TODO FIXME this seems not to create/load new thread per discussion
     DISQUS.reset(
       reload: true,
       config: ->
-        alert 'Loading thread for ' + newIdentifier
-        this.page.identifier = newIdentifier
-        this.page.url = 'http://localhost:3000/' + newIdentifier
-        this.page.title = newIdentifier
+        this.page.identifier = discussionId
+        this.page.url = 'http://localhost:3000/' + discussionId
+        this.page.title = discussionId
     )
