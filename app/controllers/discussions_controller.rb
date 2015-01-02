@@ -5,4 +5,7 @@ class DiscussionsController < ApplicationController
     @discussions = Discussion.about_fid params[:fid]
   end
 
+  def show
+  end
+
 end

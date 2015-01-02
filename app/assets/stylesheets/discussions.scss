@@ -3,9 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .discussion-list {
-  color: #436E90;
 
   .panel-title {
+    color: #436E90;
     font-weight: bold;
   }
+
+  .panel-body {
+    color: black;
+  }
+
 }
