@@ -17,3 +17,4 @@ class Dispatcher
       when 'home:index'
         new ZoningMap
         PopupTemplates.initialize()
+        Discussions.initialize()
