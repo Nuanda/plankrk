@@ -63,6 +63,8 @@ gem "omniauth-google-oauth2"
 
 group :development do
   gem 'quiet_assets'
+
+  gem 'pry-rails'
 end
 
 group :development, :test do
