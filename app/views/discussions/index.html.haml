@@ -14,12 +14,12 @@
     - @discussions.each do |discussion|
       .panel.panel-default
         .panel-heading{ role: 'tab' }
-          %a.collapsed{ href: "#discussion-#{discussion.id}",
+          %a.collapsed{ href: "[data-discussion=#{discussion.id}]",
           data: { toggle: 'collapse', parent: '#discussion-list' }}
             = discussion.title
-        .panel-collapse.collapse{ role: 'tabpanel',
-        id: "discussion-#{discussion.id}" }
-          .panel-body{ id: "discussion-#{discussion.id}-body" }
+        .panel-collapse.collapse.discussion-body{ role: 'tabpanel',
+        data: { discussion: discussion.id }}
+          .panel-body
             -#TEMP discussion body
 
 %small
