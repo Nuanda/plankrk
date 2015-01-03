@@ -10,3 +10,6 @@ class @Discussions
       )
       $.get discussionPath, (data) =>
         $("[data-discussion=#{discussionId}] .panel-body").html data
+
+    $('body').on 'ajax:success', '#new_discussion', (e, data, status, xhr) ->
+      $('#discussions-tab').html data
