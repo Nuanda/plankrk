@@ -24,6 +24,11 @@ pl:
     wishes: |
       Życzymy Ci owocnej współpracy przy planowaniu swojego ukochanego miasta!
 
+  help:
+    fid: |
+      Feature ID - unikatowy numer nadany tej strefie planu w miejskim serwerze
+      map. Nie powinien ulec zmianie.
+
   nav:
     to_en: Switch language to English
     to_pl: Przełącz język na polski
@@ -38,6 +43,20 @@ pl:
     title: Obecne dyskusje na temat
     district: Planu
     zone: Strefy
+    no_discussions: |
+      Obecnie brak dyskusji odnośnie tego miejsca.
+    discussion:
+      title:
+        new_default: Tytuł nowej dyskusji
+        default: Dyskusja numer [%{id}] odnośnie strefy [%{fid}]
+      new:
+        label: Rozpocznij dyskusję
+        title: |
+          Nowa dyskusja na temat tej strefy planu. Każdy zarejestrowany
+          użytkownik będzie mógł dołączyć do dyskusji. Pisanie anonimowych
+          komentarzy nie jest dozwolone, ale wszystkie komentarze są otwarcie
+          widoczne dla każdego odwiedzającego tę stronę.
+      save: Utwórz
 
   map:
     plan: Nazwa planu

@@ -7,6 +7,10 @@
   - if params[:zone].present?
     %dt= t 'discussions.zone'
     %dd= params[:zone]
+  %dt= t 'krakow.mpzp.FID'
+  %dd
+    = params[:fid]
+    %i.fa.fa-question{ title: t('help.fid') }
 
 - if @discussions.present?
 
@@ -20,9 +24,7 @@
         .panel-collapse.collapse.discussion-body{ role: 'tabpanel',
         data: { discussion: discussion.id }}
           .panel-body
-            -#TEMP discussion body
 
-%small
-  %i
-    FID:
-    = params[:fid]
+- else
+  .alert.alert-info
+    = t 'discussions.no_discussions'

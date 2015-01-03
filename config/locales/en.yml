@@ -24,6 +24,11 @@ en:
     wishes: |
       We wish you fruitful collaboration when co-zoning your beloved city!
 
+  help:
+    fid: |
+      Feature ID - a unique number given to that planning district or zone in
+      the city map server. Should not change in the future.
+
   nav:
     to_en: Switch language to English
     to_pl: Przełącz język na polski
@@ -38,6 +43,20 @@ en:
     title: Current discussions about
     district: District
     zone: Zone
+    no_discussions: |
+      There are currently no ongoing discussions regarding that place.
+    discussion:
+      title:
+        new_default: New discussion title
+        default: Discussion number [%{id}] about zone [%{fid}]
+      new:
+        label: Start discussion
+        title: |
+          Create new discussion about this planning zone. Every registered
+          user will be able to join the discussion. No anonymous comments
+          posting is allowed, but all comment are openly visible to anyone
+          visiting this service.
+      save: Save
 
   map:
     plan: Plan name
