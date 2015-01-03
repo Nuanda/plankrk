@@ -32,7 +32,11 @@ title: t('discussions.discussion.new.title') }
         .panel-heading{ role: 'tab' }
           %a.collapsed{ href: "[data-discussion=#{discussion.id}]",
           data: { toggle: 'collapse', parent: '#discussion-list' }}
-            = discussion.title
+            - if discussion.title.empty?
+              = t 'discussions.discussion.title.default',
+                  id: discussion.id, fid: params[:fid]
+            - else
+              = discussion.title
         .panel-collapse.collapse.discussion-body{ role: 'tabpanel',
         data: { discussion: discussion.id }}
           .panel-body
