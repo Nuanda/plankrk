@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     root 'home#index'
 
     resources :districts, only: [:show]
-    resources :discussions, only: [:index, :show]
+    resources :discussions, only: [:index, :show, :create]
   end
 
 end
