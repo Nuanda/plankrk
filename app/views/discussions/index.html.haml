@@ -12,6 +12,18 @@
     = params[:fid]
     %i.fa.fa-question{ title: t('help.fid') }
 
+.btn.btn-success.btn-xs{ data: { toggle: 'collapse', placement: 'bottom' },
+href: '#new-discussion',
+title: t('discussions.discussion.new.title') }
+  %i.fa.fa-plus
+  = t 'discussions.discussion.new.label'
+
+.collapse#new-discussion
+  .row
+    .col-lg-9
+      = render 'form'
+
+
 - if @discussions.present?
 
   .panel-group#discussion-list{ role: 'tablist' }
