@@ -13,6 +13,8 @@ class @Discussions
 
     $('body').on 'ajax:success', '#new_discussion', (e, data, status, xhr) ->
       $('#discussions').html data
+      $('#new-discussion #discussion_title').val('')
+      $('#new-discussion').collapse('hide')
 
     $('body').on 'click', 'a[href=#discussions-tab]', ->
       discussionsPath = Routes.discussions_path(
