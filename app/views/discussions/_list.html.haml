@@ -8,7 +8,7 @@
           data: { toggle: 'collapse', parent: '#discussion-list' }}
             - if discussion.title.empty?
               = t 'discussions.discussion.title.default',
-                  id: discussion.id, fid: params[:fid]
+                  id: discussion.id, fid: discussion.fid
             - else
               = discussion.title
         .panel-collapse.collapse.discussion-body{ role: 'tabpanel',
