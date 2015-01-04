@@ -2,7 +2,11 @@ class DiscussionsController < ApplicationController
   layout false
 
   def index
-    @discussions = Discussion.about_fid params[:fid]
+    if params[:fid]
+      @discussions = Discussion.about_fid params[:fid]
+    else
+      render 'recent'
+    end
   end
 
   def show

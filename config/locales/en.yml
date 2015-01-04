@@ -45,6 +45,12 @@ en:
     zone: Zone
     no_discussions: |
       There are currently no ongoing discussions regarding that place.
+    recent:
+      no_discussions: |
+        No discussions are present. In order to start a new discussion, please
+        click on a chosen plan zone, which you would like to discuss.
+      recently_created_title: Recently started discussions
+      recently_commented_title: Recently commented discussions
     discussion:
       title:
         new_default: New discussion title

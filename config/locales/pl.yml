@@ -45,6 +45,12 @@ pl:
     zone: Strefy
     no_discussions: |
       Obecnie brak dyskusji odnośnie tego miejsca.
+    recent:
+      no_discussions: |
+        Obecnie brak dyskusji. Aby rozpocząć nową dyskusję, proszę kliknij na
+        interesującą Cię strefę planu, na temat której chcesz porozmawiać.
+      recently_created_title: Ostatnio rozpoczęte dyskusje
+      recently_commented_title: Ostatnie komentarze w dyskusjach
     discussion:
       title:
         new_default: Tytuł nowej dyskusji

@@ -13,3 +13,10 @@ class @Discussions
 
     $('body').on 'ajax:success', '#new_discussion', (e, data, status, xhr) ->
       $('#discussions-tab').html data
+
+    $('body').on 'click', 'a[href=#discussions-tab]', ->
+      discussionsPath = Routes.discussions_path(
+        locale: I18n.locale
+      )
+      $.get discussionsPath, (data) ->
+        $('#discussions-tab').html data
