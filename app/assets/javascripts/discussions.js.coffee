@@ -12,7 +12,7 @@ class @Discussions
         $("[data-discussion=#{discussionId}] .panel-body").html data
 
     $('body').on 'ajax:success', '#new_discussion', (e, data, status, xhr) ->
-      $('#discussions-tab').html data
+      $('#discussions').html data
 
     $('body').on 'click', 'a[href=#discussions-tab]', ->
       discussionsPath = Routes.discussions_path(

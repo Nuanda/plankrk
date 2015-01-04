@@ -23,6 +23,5 @@ title: t('discussions.discussion.new.title') }
     .col-lg-9
       = render 'form'
 
-= render partial: 'list',
-         object: @discussions,
-         locals: { nothing: t('discussions.no_discussions') }
+#discussions
+  = render partial: 'list', object: @discussions

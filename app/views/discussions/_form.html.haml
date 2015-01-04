@@ -1,9 +1,5 @@
 = form_for Discussion.new, remote: true do |f|
 
-  = hidden_field_tag :zone, params[:zone]
-  = hidden_field_tag :district, params[:district]
-  = hidden_field_tag :fid, params[:fid]
-
   = f.hidden_field :fid, value: params[:fid]
 
   .form-group

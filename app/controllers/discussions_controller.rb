@@ -14,8 +14,8 @@ class DiscussionsController < ApplicationController
 
   def create
     @discussion = Discussion.create discussion_params
-    @discussions = Discussion.about_fid params[:fid]
-    render :index
+    @discussions = Discussion.about_fid params[:discussion][:fid]
+    render partial: 'list', object: @discussions
   end
 
 
