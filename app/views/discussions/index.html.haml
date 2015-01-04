@@ -23,24 +23,6 @@ title: t('discussions.discussion.new.title') }
     .col-lg-9
       = render 'form'
 
-
-- if @discussions.present?
-
-  .panel-group#discussion-list{ role: 'tablist' }
-    - @discussions.each do |discussion|
-      .panel.panel-default
-        .panel-heading{ role: 'tab' }
-          %a.collapsed{ href: "[data-discussion=#{discussion.id}]",
-          data: { toggle: 'collapse', parent: '#discussion-list' }}
-            - if discussion.title.empty?
-              = t 'discussions.discussion.title.default',
-                  id: discussion.id, fid: params[:fid]
-            - else
-              = discussion.title
-        .panel-collapse.collapse.discussion-body{ role: 'tabpanel',
-        data: { discussion: discussion.id }}
-          .panel-body
-
-- else
-  .alert.alert-info
-    = t 'discussions.no_discussions'
+= render partial: 'list',
+         object: @discussions,
+         locals: { nothing: t('discussions.no_discussions') }
