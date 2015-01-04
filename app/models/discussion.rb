@@ -6,8 +6,8 @@ class Discussion < ActiveRecord::Base
 
   scope :recently_created, -> { order(created_at: :desc).limit(5) }
 
-  # TODO FIXME change to proper query when comments model is available
-  # TODO FIXME add specs for this scope when implemented
-  scope :recently_commented, -> { order(created_at: :desc).limit(5) }
+  # TODO FIXME add :recently_commented scope to return 5 discussion
+  # with the most recent comments
+  # scope :recently_commented, -> { order(created_at: :desc).limit(5) }
 
 end
