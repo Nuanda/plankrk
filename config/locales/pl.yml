@@ -73,10 +73,10 @@ pl:
     zoom_in: Przybliż mapę
     zoom_out: Oddal mapę
     start_discussion:
-      tooltip: Rozpocznij nową dyskusję na temat tego obszaru.
+      tooltip: Rozpocznij nową dyskusję na temat tej strefy.
       label: Nowa dyskusja
     show_discussions:
-      tooltip: Zobacz toczące się dyskusje na temat tego obszaru.
+      tooltip: Zobacz toczące się dyskusje na temat tej strefy.
       label: Zobacz dyskusje
 
   krakow:
