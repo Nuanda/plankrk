@@ -1,0 +1,24 @@
+- if Discussion.count == 0
+
+  %h4.text-center
+    = t 'activerecord.models.discussions'
+
+  .alert.alert-info
+    = t '.no_discussions'
+
+- else
+
+  %h4.text-center
+    = t '.recently_created_title'
+
+  = render partial: 'list',
+           object: Discussion.recently_created,
+           locals: { nothing: t('.no_discussions') }
+
+  -# TODO FIXME show 5 discussions with the latest comments in them
+  -#%h4.text-center
+  -#  = t '.recently_commented_title'
+  -#
+  -#= render partial: 'list',
+  -#         object: Discussion.recently_commented,
+  -#         locals: { nothing: t('.no_discussions') }

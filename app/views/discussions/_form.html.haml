@@ -1,0 +1,11 @@
+= form_for Discussion.new, remote: true do |f|
+
+  = f.hidden_field :fid, value: params[:fid]
+
+  .form-group
+    = f.label :title
+    = f.text_field :title,
+      placeholder: t('discussions.discussion.title.new_default'),
+      class: 'form-control'
+
+  = f.submit t('discussions.discussion.save'), class: 'btn btn-default btn-xs'

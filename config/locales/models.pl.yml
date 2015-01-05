@@ -1,0 +1,8 @@
+pl:
+  activerecord:
+    models:
+      discussion: Dyskusja
+      discussions: Dyskusje
+    attributes:
+      discussion:
+        title: Tytuł

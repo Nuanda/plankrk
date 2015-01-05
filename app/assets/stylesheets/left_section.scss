@@ -2,7 +2,7 @@
 #left-section {
   margin-right: -15px;
 
-  ul {
+  ul.tab-pane {
     @extend .nav;
     @extend .nav-stacked;
     @extend .main-menu;

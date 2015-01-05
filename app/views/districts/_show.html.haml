@@ -36,6 +36,8 @@
       %dd
         - if @data[key].present?
           = @data[key]
+          - if key == 'FID'
+            %i.fa.fa-question{ title: t('help.fid') }
         - else
           %em.text-muted
             = surround '(',')' do

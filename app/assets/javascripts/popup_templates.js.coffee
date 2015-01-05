@@ -1,5 +1,6 @@
 class @PopupTemplates
   @initialize = ->
+    console.log 'INIT: PopupTemplates initialization'
     $('body').on 'click', 'button[data-fid]', ->
       discussionsPath = Routes.discussions_path(
         locale: I18n.locale
@@ -30,10 +31,6 @@ class @PopupTemplates
         data-zone="{OZNACZENIE}"
         title="#{I18n.t('map.show_discussions.tooltip')}">
         <i class="fa fa-comments-o"></i>
-      </button>
-      <button type="button" class="btn btn-sm"
-        title="#{I18n.t('map.start_discussion.tooltip')}">
-        <i class="fa fa-plus-square"></i>
       </button>
     </div><br>
     <small><small>#{I18n.t('krakow.mpzp.FID')}: {FID}</small></small>

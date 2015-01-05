@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      discussion: Discussion
+      discussions: Discussions
+    attributes:
+      discussion:
+        title: Title
