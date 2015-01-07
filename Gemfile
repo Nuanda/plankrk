@@ -59,7 +59,8 @@ gem 'devoops-rails',
 
 gem 'devise'
 gem 'omniauth-facebook'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
+gem 'cancancan'
 
 group :development do
   gem 'quiet_assets'
