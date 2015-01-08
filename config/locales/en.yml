@@ -45,8 +45,6 @@ en:
     zone: Zone
     no_discussions: |
       There are currently no ongoing discussions regarding that place.
-    delete_confirmation: |
-      Are you sure you want to delete this discussion?
     recent:
       no_discussions: |
         No discussions are present. In order to start a new discussion, please
