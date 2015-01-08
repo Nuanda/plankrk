@@ -6,6 +6,19 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
 
+  def render_error(msg, options={})
+    error_json = {
+      message: msg,
+      type: options[:type] || :general
+    }
+    error_json[:details] = options[:details] if options[:details]
+
+    render(
+      json: error_json,
+      status: options[:status] || :bad_request
+    )
+  end
+
   private
 
   def set_locale

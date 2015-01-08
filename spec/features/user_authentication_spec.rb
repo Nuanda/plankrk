@@ -24,7 +24,7 @@ RSpec.feature 'User authentication' do
     user = create(:user)
 
     sign_in_as(user)
-    find(:linkhref, '/sign_out?locale=pl').click
+    find(:linkhref, '/sign_out?locale=en').click
 
     expect(page).not_to have_content user.name
   end

@@ -17,5 +17,4 @@ Rails.application.routes.draw do
     resources :districts, only: [:show]
     resources :discussions, only: [:index, :show, :create]
   end
-
 end
