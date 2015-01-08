@@ -8,13 +8,20 @@ pl:
     welcome: Witamy w %{title}
     what_you_see: |
       Z prawej strony widzisz mapę miasta %{city} z miejscowymi planami
-      zagospodarowania zaznaczonymi na zielono. Miejsca puste oznaczają, że
+      zagospodarowania zaznaczonymi dwukolorowo. Miejsca puste oznaczają, że
       dla tych dzielnic plany zagospodarowania jeszcze nie powstały.
+    what_you_see_2: |
+      Plany zaznaczone na czerwono są już sporządzone i obowiązujące. Plany w
+      kolorze zielonym są w trakcie sporządzania lub w procesie konsultacji
+      społecznych.
     basics:
       title: Operacje
       click_district:
-        label: kliknięcie zielonego obszaru
+        label: kliknięcie planu
         effect: powiększa obszar planu do szczegółowych stref zagospodarowania
+      click_zone:
+        label: kliknięcie strefy
+        effect: pokazuje informacje szczegółowe
       zoom_out:
         label: (powyżej mapy)
         effect: oddala do widoku całego miasta

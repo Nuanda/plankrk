@@ -8,13 +8,19 @@ en:
     welcome: Welcome to %{title}
     what_you_see: |
       What you see to your right is a map of %{city} with planning zones shown
-      as a green overlay. As you see, some parts of the city are blank - this
+      as a two-color overlay. As you see, some parts of the city are blank - this
       means the zoning for that parts is yet to be prepared.
+    what_you_see_2: |
+      Red district plans are already confirmed and in force. Green district plans
+      are under consideration and subject to public consultations.
     basics:
       title: Basics
       click_district:
         label: click a district
         effect: zooms in on a district and shows detailed zoning plan
+      click_zone:
+        label: click a zone
+        effect: shows detailed zone use information
       zoom_out:
         label: (top bar)
         effect: zooms out to the entire city
