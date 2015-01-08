@@ -10,13 +10,20 @@ class @ZoningMap
       zoomOutTitle: I18n.t('map.zoom_out')
     ).addTo @zoningMap
 
-    # Add an OpenStreetMap tile layer; other tiles could be used as well - see below
-    # NOTE: please do not localize the 'contributors' word here, it's kind of ToU requirement
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer(Config.CDB_TILE_URL,{
+      attribution: Config.OSM_ATTRIBUTION + ', ' + Config.CDB_ATTRIBUTION
     }).addTo @zoningMap
 
     baseZoningUrl = Config.ZONING_MAP_SERVER_BASE_URL
+
+
+    @featureColor = (feature, style = 'BASE') ->
+      if feature.properties.STATUS == 'SPORZĄDZANY'
+        Config["PREP_DISTRICT_#{style}_COLOR"]
+      else if feature.properties.STATUS == 'OBOWIĄZUJĄCY'
+        Config["READY_DISTRICT_#{style}_COLOR"]
+      else
+        Config["ZONE_#{style}_COLOR"]
 
     # Now we load MSIP map server feature layer from UMK ArcGIS server
     # Layer 0 - detailed zoning plans, layer 1 - zoning plan district contours
@@ -24,16 +31,16 @@ class @ZoningMap
     @districtContours = new L.esri.FeatureLayer(
       baseZoningUrl + "1"
       useCors: false
-      style: ->
-        color: "#60ba39"
+      style: (feature) =>
+        color: @featureColor(feature)
         weight: 3
     )
 
     @detailedZoning = new L.esri.FeatureLayer(
       baseZoningUrl + "0"
       useCors: false
-      style: ->
-        color: "#dd4439"
+      style: (feature) =>
+        color: @featureColor(feature)
         weight: 2
     )
 
@@ -90,7 +97,7 @@ class @ZoningMap
       oldTooltipElement = e.originalEvent.fromElement
 
     @districtContours.on 'mouseover', (e) =>
-      mouseoverFunc(e, '#60ba39', @districtContours)
+      mouseoverFunc(e, @featureColor(e.layer.feature), @districtContours)
       @createDistrictTooltip e
 
     @districtContours.on 'mousemove', (e) =>
@@ -103,18 +110,17 @@ class @ZoningMap
       $(oldTooltipElement).tooltip 'destroy'
 
     @districtContours.on 'click', (e) =>
-      clickFunc(e, '#326E18', @districtContours)
+      clickFunc(e, @featureColor(e.layer.feature, 'DEEP'), @districtContours)
       @districtClickCallback(e)
 
     @detailedZoning.on 'mouseover', (e) =>
-      mouseoverFunc(e, '#dd4439', @detailedZoning)
+      mouseoverFunc(e, Config.ZONE_BASE_COLOR, @detailedZoning)
     @detailedZoning.on 'mouseout', (e) =>
       @detailedZoning.resetStyle(oldSelectedDistrictId)
     @detailedZoning.on 'click', (e) =>
-      clickFunc(e, '#B5423A', @detailedZoning)
+      clickFunc(e, Config.ZONE_DEEP_COLOR, @detailedZoning)
 
     # Binding popup templates to features of both layers, to be shown on feature click
-#    PopupTemplates.bindPopup @districtContours, PopupTemplates.districtPopupTemplate()
     PopupTemplates.bindPopup @detailedZoning, PopupTemplates.zonePopupTemplate()
 
     # Let's start with district contours
