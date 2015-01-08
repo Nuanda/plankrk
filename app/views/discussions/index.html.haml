@@ -12,7 +12,9 @@
     = params[:fid]
     %i.fa.fa-question{ title: t('help.fid') }
 
+
 - if can?(:create, Discussion)
+
   .btn.btn-success.btn-xs{ data: { toggle: 'collapse', placement: 'bottom' },
   href: '#new-discussion',
   title: t('discussions.discussion.new.title') }
@@ -23,6 +25,17 @@
     .row
       .col-lg-9
         = render 'form'
+
+- else
+
+  .btn-group
+    .btn.btn-success.btn-xs.disabled
+      %i.fa.fa-plus
+      = t 'discussions.discussion.new.label'
+    .btn.btn-success.btn-xs{ data: { placement: 'bottom' },
+    title: t('discussions.discussion.new.please_login_title') }
+      %i.fa.fa-question
+
 
 #discussions
   = render partial: 'list', object: @discussions

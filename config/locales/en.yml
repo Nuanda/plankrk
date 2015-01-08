@@ -68,6 +68,9 @@ en:
           user will be able to join the discussion. No anonymous comments
           posting is allowed, but all comment are openly visible to anyone
           visiting this service.
+        please_login_title: |
+          Please login if you would like to start a new discussion. Login
+          buttons are located in the top-right corner.
       save: Save
 
   map:
