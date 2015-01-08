@@ -1,5 +1,5 @@
 class DiscussionsController < ApplicationController
-  load_and_authorize_resource only: :create
+  load_and_authorize_resource only: [:create, :destroy]
   layout false
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -22,6 +22,12 @@ class DiscussionsController < ApplicationController
 
     @discussions = Discussion.about_fid params[:discussion][:fid]
     render partial: 'list', object: @discussions
+  end
+
+  def destroy
+    @discussion.destroy!
+
+    head :ok
   end
 
   private

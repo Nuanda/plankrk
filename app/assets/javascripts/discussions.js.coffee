@@ -22,3 +22,6 @@ class @Discussions
       )
       $.get discussionsPath, (data) ->
         $('#discussions-tab').html data
+
+    $('body').on 'ajax:success', '.delete', (evt, data, status, xhr) ->
+      $(this).parent().parent().parent().fadeOut()

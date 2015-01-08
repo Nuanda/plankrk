@@ -52,6 +52,8 @@ pl:
     zone: Strefy
     no_discussions: |
       Obecnie brak dyskusji odnośnie tego miejsca.
+    delete_confirmation: |
+      Czy na pewno chcesz usunąć tę dyskusję?
     recent:
       no_discussions: |
         Obecnie brak dyskusji. Aby rozpocząć nową dyskusję, proszę kliknij na
