@@ -32,3 +32,6 @@ bower.json
 
 # rubymine internal files
 /.idea/
+
+# It is generated in automatic way
+public/javascripts/translations.js
