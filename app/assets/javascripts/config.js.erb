@@ -12,5 +12,18 @@ if (!this.Config) {
     "<%= Rails.configuration.constants['krakow']['max_bounds']['south'] %>";
   this.Config.MAX_BOUNDS_NORTH =
     "<%= Rails.configuration.constants['krakow']['max_bounds']['north'] %>";
+
+  this.Config.READY_DISTRICT_BASE_COLOR = '#dd4439';
+  this.Config.READY_DISTRICT_DEEP_COLOR = '#992222';
+  this.Config.PREP_DISTRICT_BASE_COLOR = '#60ba39';
+  this.Config.PREP_DISTRICT_DEEP_COLOR = '#329918';
+  this.Config.ZONE_BASE_COLOR = '#aaaa22';
+  this.Config.ZONE_DEEP_COLOR = '#888811';
+
+  this.Config.OSM_TILE_URL = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+  this.Config.OSM_ATTRIBUTION = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+  this.Config.CDB_TILE_URL = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+  this.Config.CDB_ATTRIBUTION = '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
+
   I18n.defaultLocale = "<%= I18n.default_locale %>";
 }
