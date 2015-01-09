@@ -4,8 +4,21 @@ RSpec.describe Ability do
   let(:user) { create(:user) }
   let(:ability) { Ability.new(user) }
 
-  it 'author can destroy discussion' do
+  it 'author can destroy discussion with no comments' do
     owned_discussion = create(:discussion, author: user)
+    expect(can?(:destroy, owned_discussion)).to be_truthy
+  end
+
+  it 'author cannot destroy discussion with other user comment' do
+    owned_discussion = create(:discussion, author: user)
+    create(:comment, discussion: owned_discussion)
+    create(:comment, author: user, discussion: owned_discussion)
+    expect(can?(:destroy, owned_discussion)).to be_falsy
+  end
+
+  it 'author can destroy discussion with own comments only' do
+    owned_discussion = create(:discussion, author: user)
+    create(:comment, author: user, discussion: owned_discussion)
     expect(can?(:destroy, owned_discussion)).to be_truthy
   end
 
