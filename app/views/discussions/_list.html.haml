@@ -13,7 +13,7 @@
               = discussion.title
           .pull-right
             - if can?(:destroy, discussion)
-              = link_to discussion_path(I18n.locale, discussion),
+              = link_to discussion_path(id: discussion.id),
                         method: :delete, remote: true, class: 'delete',
                         data: { confirm: t('discussions.delete_confirmation') } do
                 = icon('times')
