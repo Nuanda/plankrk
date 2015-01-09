@@ -15,4 +15,6 @@ class Comment < ActiveRecord::Base
            class_name: 'Comment',
            foreign_key: 'thread_id'
 
+  scope :by, ->(user) { where(author: user) }
+
 end
