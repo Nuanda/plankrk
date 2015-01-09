@@ -53,16 +53,16 @@ RSpec.describe Discussion do
 
     it 'returns all discussions when there are <=5 in total commented' do
       3.times { create(:comment) }
-      expect(Discussion.recently_commented.count).to eq 3
+      expect(Discussion.recently_commented.all.length).to eq 3
     end
 
     it 'does not return uncommented discussions' do
       2.times { create(:discussion) }
       expect(Discussion.count).to eq 2
-      expect(Discussion.recently_commented.count).to eq 0
+      expect(Discussion.recently_commented.all.length).to eq 0
       4.times { create(:comment) }
       expect(Discussion.count).to eq 6
-      expect(Discussion.recently_commented.count).to eq 4
+      expect(Discussion.recently_commented.all.length).to eq 4
     end
 
     it 'does not return duplicate discussions' do
@@ -71,12 +71,12 @@ RSpec.describe Discussion do
       3.times { create(:comment, discussion: c1.discussion) }
       expect(Discussion.count).to eq 3
       expect(Comment.count).to eq 6
-      expect(Discussion.recently_commented.count).to eq 3
+      expect(Discussion.recently_commented.all.length).to eq 3
     end
 
     it 'returns only 5 discussions' do
       6.times { create(:comment) }
-      expect(Discussion.recently_commented.count).to eq 5
+      expect(Discussion.recently_commented.all.length).to eq 5
     end
 
     it 'returns discussions in newest comment first order' do
@@ -89,8 +89,10 @@ RSpec.describe Discussion do
       create(:comment, discussion: d, created_at: Time.now - 3.hours)
       create(:comment, discussion: e, created_at: Time.now - 15.minutes)
       create(:comment, discussion: f, created_at: Time.now - 25.minutes)
+      expect(Discussion.count).to eq 7
+      expect(Comment.count).to eq 7
       result = Discussion.recently_commented
-      expect(result.count).to eq 5
+      expect(result.all.length).to eq 5
       expect(result.map(&:title)).to eq %w(c a b e f)
     end
 
