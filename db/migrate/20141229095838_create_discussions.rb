@@ -3,7 +3,7 @@ class CreateDiscussions < ActiveRecord::Migration
     create_table :discussions do |t|
       t.integer :fid, null: false
       t.string  :title
-      t.integer :author_id, index: true, null: false
+      t.belongs_to :author, index: true, null: false
 
       t.timestamps null: false
     end
