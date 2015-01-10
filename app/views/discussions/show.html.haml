@@ -5,6 +5,6 @@
     .page-feed-content
       %small.time
         = comment.author.name
-        = comment.created_at
+        = time_ago comment.created_at
       %p
         = comment.content
