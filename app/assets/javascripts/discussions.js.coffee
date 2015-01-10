@@ -5,8 +5,8 @@ class @Discussions
     $('body').on 'show.bs.collapse', '.discussion-body', ->
       discussionId = $(this).attr('data-discussion')
       discussionPath = Routes.discussion_path(
+        discussionId,
         locale: I18n.locale
-        id: discussionId
       )
       $.get discussionPath, (data) =>
         $("[data-discussion=#{discussionId}] .panel-body").html data
