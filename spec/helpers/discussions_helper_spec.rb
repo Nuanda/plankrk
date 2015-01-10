@@ -6,7 +6,7 @@ RSpec.describe DiscussionsHelper, type: :helper do
 
     it 'works ok for time in the future' do
       t = Time.now + 3.minutes
-      expect(time_ago(t)).to eq l(t, format: :short)
+      expect(time_ago(t)).to eq l(t.in_time_zone('CET'), format: :short)
     end
 
   end
