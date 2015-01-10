@@ -10,6 +10,7 @@ class DiscussionsController < ApplicationController
     if params[:fid]
       @discussions = Discussion.about_fid params[:fid]
     else
+      @recently_commented = Discussion.recently_commented.all
       render 'recent'
     end
   end
