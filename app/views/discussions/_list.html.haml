@@ -1,11 +1,11 @@
 - if list.present?
 
-  .panel-group#discussion-list{ role: 'tablist' }
+  .panel-group.discussion-list{ role: 'tablist' }
     - list.each do |discussion|
       .panel.panel-default
         .panel-heading{ role: 'tab' }
           %a.collapsed{ href: "[data-discussion=#{discussion.id}]",
-          data: { toggle: 'collapse', parent: '#discussion-list' }}
+          data: { toggle: 'collapse', parent: '.discussion-list' }}
             - if discussion.title.empty?
               = t 'discussions.discussion.title.default',
                   id: discussion.id, fid: discussion.fid

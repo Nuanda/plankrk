@@ -15,6 +15,7 @@ class DiscussionsController < ApplicationController
   end
 
   def show
+    @discussion = Discussion.find params[:id]
   end
 
   def create

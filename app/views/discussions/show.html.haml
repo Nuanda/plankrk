@@ -1,0 +1,10 @@
+- @discussion.comments.each do |comment|
+  .box
+    .avatar
+      %img{ src: comment.author.image }
+    .page-feed-content
+      %small.time
+        = comment.author.name
+        = time_ago_in_words comment.created_at
+      %p
+        = comment.content
