@@ -15,6 +15,8 @@ class Comment < ActiveRecord::Base
            class_name: 'Comment',
            foreign_key: 'thread_id'
 
+  default_scope { order(:created_at) }
+
   scope :by, ->(user) { where(author: user) }
 
 end
