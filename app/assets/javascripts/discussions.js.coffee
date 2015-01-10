@@ -24,4 +24,4 @@ class @Discussions
         $('#discussions-tab').html data
 
     $('body').on 'ajax:success', '.delete', (evt, data, status, xhr) ->
-      $(this).parent().parent().parent().fadeOut()
+      $(this).parents('.panel').fadeOut()
