@@ -8,9 +8,11 @@ class Discussion < ActiveRecord::Base
 
   validates_presence_of :fid
 
-  scope :about_fid, ->(fid) { where(fid: fid).order(:created_at) }
+  scope :newest_first, -> { order(created_at: :desc) }
 
-  scope :recently_created, -> { order(created_at: :desc).limit(5) }
+  scope :about_fid, ->(fid) { where(fid: fid).newest_first }
+
+  scope :recently_created, -> { newest_first.limit(5) }
 
   scope :recently_commented, -> {
     select('discussions.*', 'MAX(comments.created_at)').

@@ -12,6 +12,14 @@ RSpec.describe Discussion do
       expect(Discussion.about_fid(nil)).not_to eq nil
     end
 
+    it 'returns discussions in the newset-first order' do
+      a = create(:discussion)
+      b = create(:discussion, created_at: Time.now - 10.minutes)
+      c = create(:discussion, created_at: Time.now + 5.years)
+      result = Discussion.recently_created
+      expect(result).to eq [c, a, b]
+    end
+
   end
 
   describe '#recently_created' do
@@ -31,15 +39,12 @@ RSpec.describe Discussion do
       expect(Discussion.recently_created.count).to eq 3
     end
 
-    it 'returns discussions in newest first order' do
-      create(:discussion, title: 'a')
-      create(:discussion, title: 'b', created_at: Time.now - 10.minutes)
-      create(:discussion, title: 'c', created_at: Time.now + 5.years)
+    it 'returns discussions in the newest-first order' do
+      a = create(:discussion)
+      b = create(:discussion, created_at: Time.now - 10.minutes)
+      c = create(:discussion, created_at: Time.now + 5.years)
       result = Discussion.recently_created
-      expect(result.count).to eq 3
-      expect(result[0].title).to eq 'c'
-      expect(result[1].title).to eq 'a'
-      expect(result[2].title).to eq 'b'
+      expect(result).to eq [c, a, b]
     end
 
   end
