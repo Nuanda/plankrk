@@ -4,9 +4,12 @@ class Discussion < ActiveRecord::Base
              foreign_key: 'author_id',
              required: true
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates_presence_of :fid
+
+  before_destroy :check_comments, prepend: true
+
 
   scope :newest_first, -> { order(created_at: :desc) }
 
@@ -30,5 +33,19 @@ class Discussion < ActiveRecord::Base
     #    ORDER BY SORT DESC
     #    LIMIT 5')
   }
+
+  # Please note it does NOT include the discussion author unless that user
+  # is also an author of at least a single comment in this discussion
+  def commenters
+    # User.joins(:comments).where(comments: {discussion_id: id}).uniq
+    User.where(id: comments.pluck(:author_id))
+  end
+
+
+  private
+
+  def check_comments
+    commenters.count < 2
+  end
 
 end

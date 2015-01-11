@@ -4,6 +4,59 @@ RSpec.describe Discussion do
 
   it { should validate_presence_of :fid }
 
+  describe '#destroy' do
+
+    subject(:d) { create(:discussion) }
+
+    it 'performs comments destroy cascade' do
+      c = create(:comment, discussion: d)
+      cx = create(:comment)
+      expect(Comment.count).to eq 2
+      d.destroy
+      expect(Discussion.find_by_id(d.id)).to eq nil
+      expect(Comment.find_by_id(c.id)).to eq nil
+      expect(Comment.find(cx.id)).to eq cx
+    end
+
+    it 'is blocked when there are many commenters' do
+      create(:comment, discussion: d)
+      create(:comment, discussion: d)
+      expect(d.comments.count).to eq 2
+      expect(d.commenters.count).to eq 2
+      d.destroy
+      expect(Comment.count).to eq 2
+      expect(Discussion.find(d.id)).to eq d
+    end
+
+  end
+
+  describe '#commenters' do
+
+    it 'returns empty array when there are no comments' do
+      d = create(:discussion)
+      expect(d.commenters).to eq []
+    end
+
+    it 'does not return the discussion author' do
+      a = create(:user)
+      d = create(:discussion, author: a)
+      create(:comment, discussion: d)
+      expect(d.commenters).not_to include a
+    end
+
+    it 'returns all commenters only once' do
+      c1 = create(:user)
+      c2 = create(:user)
+      d = create(:discussion)
+      create(:comment, discussion: d, author: c1)
+      create(:comment, discussion: d, author: c1)
+      create(:comment, discussion: d, author: c2)
+      expect(d.commenters.count).to eq 2
+      expect(d.commenters).to contain_exactly c1, c2
+    end
+
+  end
+
   describe '#about_fid' do
 
     it 'returns empty array on nil fid' do
