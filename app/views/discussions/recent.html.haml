@@ -12,7 +12,7 @@
     = t '.recently_created_title'
 
   = render partial: 'list',
-           object: Discussion.recently_created,
+           object: @recently_created,
            locals: { nothing: t('.no_discussions') }
 
   - if @recently_commented.present?

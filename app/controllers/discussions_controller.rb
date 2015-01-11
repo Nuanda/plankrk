@@ -8,8 +8,9 @@ class DiscussionsController < ApplicationController
 
   def index
     if params[:fid]
-      @discussions = Discussion.about_fid params[:fid]
+      @discussions = Discussion.about params[:fid]
     else
+      @recently_created = Discussion.recently_created
       @recently_commented = Discussion.recently_commented.all
       render 'recent'
     end
@@ -22,7 +23,7 @@ class DiscussionsController < ApplicationController
   def create
     @discussion.save!
 
-    @discussions = Discussion.about_fid params[:discussion][:fid]
+    @discussions = Discussion.about params[:discussion][:fid]
     render partial: 'list', object: @discussions
   end
 

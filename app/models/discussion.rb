@@ -13,7 +13,7 @@ class Discussion < ActiveRecord::Base
 
   scope :newest_first, -> { order(created_at: :desc) }
 
-  scope :about_fid, ->(fid) { where(fid: fid).newest_first }
+  scope :about, ->(fid) { where(fid: fid).newest_first }
 
   scope :recently_created, -> { newest_first.limit(5) }
 

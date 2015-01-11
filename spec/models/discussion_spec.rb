@@ -57,19 +57,19 @@ RSpec.describe Discussion do
 
   end
 
-  describe '#about_fid' do
+  describe '#about' do
 
     it 'returns empty array on nil fid' do
       # This is to prevent 500 errors when no fid is passed
-      expect(Discussion.about_fid(nil)).to eq []
-      expect(Discussion.about_fid(nil)).not_to eq nil
+      expect(Discussion.about(nil)).to eq []
+      expect(Discussion.about(nil)).not_to eq nil
     end
 
     it 'returns discussions in the newset-first order' do
-      a = create(:discussion)
-      b = create(:discussion, created_at: Time.now - 10.minutes)
-      c = create(:discussion, created_at: Time.now + 5.years)
-      result = Discussion.recently_created
+      a = create(:discussion, fid: 1)
+      b = create(:discussion, created_at: Time.now - 10.minutes, fid: 1)
+      c = create(:discussion, created_at: Time.now + 5.years, fid: 1)
+      result = Discussion.about 1
       expect(result).to eq [c, a, b]
     end
 

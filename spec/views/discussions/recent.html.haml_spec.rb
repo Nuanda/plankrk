@@ -18,6 +18,8 @@ RSpec.describe 'discussions/recent.html.haml' do
   context 'when discussions are present' do
     it 'displays discussions' do
       6.times { create(:discussion) }
+      @recently_created = Discussion.recently_created
+      @recently_commented = Discussion.recently_commented.all
       render
       Discussion.recently_created.each do |d|
         expect(rendered).to have_link d.title
@@ -27,10 +29,12 @@ RSpec.describe 'discussions/recent.html.haml' do
 
   context 'when comments are present' do
     it 'displays discussions with recent comments' do
-      %w(a b c d e f).map do |title|
+      %w(a b c d e f).each do |title|
         d = create(:discussion, title: title)
         create(:comment, discussion: d)
       end
+      @recently_created = Discussion.recently_created
+      @recently_commented = Discussion.recently_commented.all
       render
       Discussion.recently_commented.each do |d|
         expect(rendered).to have_link d.title

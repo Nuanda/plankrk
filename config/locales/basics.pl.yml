@@ -159,6 +159,7 @@ pl:
         one: ma nieprawidłową długość (powinna wynosić jeden znak)
         other: ma nieprawidłową długość (powinna wynosić %{count} znaków)
       other_than: 'musi być inna niż %{count}'
+      nondeletable: "Obiektów klasy %{class_name} nie można kasować!"
     template:
       body: ! 'Błędy dotyczą następujących pól:'
       header:

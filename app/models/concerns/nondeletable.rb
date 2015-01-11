@@ -14,7 +14,8 @@ module Nondeletable extend ActiveSupport::Concern
 
   def prevent_destroy
     logger.error "PREVENTING DESTROY of #{self.class.name}!!!"
-    errors.add :base, "Entities of #{self.class.name} cannot be destroyed!"
+    errors.add :base,
+      I18n.t('errors.messages.nondeletable', class_name: self.class.name)
     false
   end
 

@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User do
 
-  it 'is forever', focus: true do
-    create(:user).destroy
+  it 'is forever' do
+    u = create(:user)
+    u.destroy
     expect(User.count).to eq 1
+    expect(u.errors.full_messages).to eq ['Entities of User cannot be destroyed!']
   end
 
   it 'creates new user while logging using omniauth' do
