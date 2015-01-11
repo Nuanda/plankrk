@@ -33,7 +33,7 @@ RSpec.describe 'discussions/_list.html.haml' do
       render partial: 'discussions/list.html.haml',
              locals: { list: [ discussion ] }
 
-      path = discussion_path(I18n.locale, discussion)
+      path = discussion_path(id: discussion.id)
       expect(rendered).
         to have_xpath(".//a[@href='#{path}']")
     end

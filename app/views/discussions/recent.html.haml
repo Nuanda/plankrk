@@ -12,13 +12,13 @@
     = t '.recently_created_title'
 
   = render partial: 'list',
-           object: Discussion.recently_created,
+           object: @recently_created,
            locals: { nothing: t('.no_discussions') }
 
-  -# TODO FIXME show 5 discussions with the latest comments in them
-  -#%h4.text-center
-  -#  = t '.recently_commented_title'
-  -#
-  -#= render partial: 'list',
-  -#         object: Discussion.recently_commented,
-  -#         locals: { nothing: t('.no_discussions') }
+  - if @recently_commented.present?
+
+    %h4.text-center
+      = t '.recently_commented_title'
+
+    = render partial: 'list',
+             object: @recently_commented

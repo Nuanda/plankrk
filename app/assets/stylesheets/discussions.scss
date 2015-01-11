@@ -4,11 +4,15 @@
 
 .discussion-list {
 
-  color: black;
+  color: #525252;
 
   .panel-title {
     color: #436E90;
     font-weight: bold;
+  }
+
+  .panel-body {
+    background-color: #FBFBF0;
   }
 
 }
