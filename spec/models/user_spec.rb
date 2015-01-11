@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User do
+
+  it 'is forever', focus: true do
+    create(:user).destroy
+    expect(User.count).to eq 1
+  end
+
   it 'creates new user while logging using omniauth' do
     expect { User.from_omniauth(auth) }.to change { User.count }.by(1)
   end
