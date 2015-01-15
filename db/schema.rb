@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150108190811) do
   end
 
   add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
+  add_index "comments", ["created_at"], name: "index_comments_on_created_at", using: :btree
   add_index "comments", ["discussion_id"], name: "index_comments_on_discussion_id", using: :btree
   add_index "comments", ["thread_id"], name: "index_comments_on_thread_id", using: :btree
 
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150108190811) do
   end
 
   add_index "discussions", ["author_id"], name: "index_discussions_on_author_id", using: :btree
+  add_index "discussions", ["created_at"], name: "index_discussions_on_created_at", order: {"created_at"=>:desc}, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -51,8 +53,8 @@ ActiveRecord::Schema.define(version: 20150108190811) do
     t.string   "uid"
     t.string   "name"
     t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

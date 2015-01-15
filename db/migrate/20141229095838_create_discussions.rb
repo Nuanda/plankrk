@@ -9,5 +9,6 @@ class CreateDiscussions < ActiveRecord::Migration
     end
 
     add_foreign_key :discussions, :users, column: :author_id
+    add_index :discussions, :created_at, order: { created_at: :desc }
   end
 end
