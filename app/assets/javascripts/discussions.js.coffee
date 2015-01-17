@@ -2,14 +2,12 @@ class @Discussions
   @initialize = ->
     console.log 'INIT: Discussions initialization'
 
-    $('body').on 'show.bs.collapse', '.discussion-body', ->
-      discussionId = $(this).attr('data-discussion')
-      discussionPath = Routes.discussion_path(
-        discussionId,
-        locale: I18n.locale
-      )
-      $.get discussionPath, (data) =>
-        $("[data-discussion=#{discussionId}] .panel-body").html data
+    $('body').on 'show.bs.collapse', '.discussion-body', (e) =>
+      discussionId = $(e.target).attr('data-discussion')
+      @loadDiscussion(discussionId)
+
+    $('body').on 'ajax:success', '#new_comment', (e, data, status, xhr) ->
+      $('.discussion-body.in .panel-body').html data
 
     $('body').on 'ajax:success', '#new_discussion', (e, data, status, xhr) ->
       $('#discussions').html data
@@ -25,3 +23,12 @@ class @Discussions
 
     $('body').on 'ajax:success', '.delete', (evt, data, status, xhr) ->
       $(this).parents('.panel').fadeOut()
+
+
+  @loadDiscussion = (discussionId) ->
+    discussionPath = Routes.discussion_path(
+      discussionId,
+      locale: I18n.locale
+    )
+    $.get discussionPath, (data) =>
+      $("[data-discussion=#{discussionId}] .panel-body").html data

@@ -9,6 +9,8 @@ class Ability
         discussion.author_id == user.id &&
           discussion.comments.by(user) == discussion.comments
       end
+
+      can :create, Comment, author_id: user.id
     end
   end
 end

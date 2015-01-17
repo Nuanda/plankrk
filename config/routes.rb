@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
     resources :districts, only: [:show]
     resources :discussions, only: [:index, :show, :create, :destroy]
+    resources :comments, only: [:create]
   end
+
 end

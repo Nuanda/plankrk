@@ -75,6 +75,11 @@ pl:
           Proszę zaloguj się, jeśli chcesz rozpocząć nową dyskusję. W tym celu
           użyj przycisków znajdujących się w prawym górnym rogu ekranu.
       save: Utwórz
+    comment:
+      content:
+        new_default: Tutaj wpisz swój komentarz...
+        purged: (komentarz usunięty przez autora)
+      save: Wyślij
 
   map:
     plan: Nazwa planu

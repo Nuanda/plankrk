@@ -8,3 +8,16 @@
         = time_ago comment.created_at
       %p
         = comment.content
+
+.box
+  .avatar
+    %img{ src: current_user.image }
+  .page-feed-content
+    = form_for Comment.new, remote: true do |f|
+      .form-group
+        = f.hidden_field :discussion_id, value: @discussion.id
+        = f.text_area :content,
+          placeholder: t('discussions.comment.content.new_default'),
+          class: 'form-control'
+
+      = f.submit t('discussions.comment.save'), class: 'btn btn-default btn-xs'
