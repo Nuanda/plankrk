@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Ability do
+
   let(:user) { create(:user) }
   let(:ability) { Ability.new(user) }
 
@@ -37,7 +38,18 @@ RSpec.describe Ability do
     expect(ability.can?(:create, build(:discussion))).to be_falsy
   end
 
+  it 'logged in user can post comments' do
+    comment = build(:comment, author: user)
+    expect(can?(:create, comment)).to be_truthy
+  end
+
+  it 'anonymous is not able to post comments' do
+    ability = Ability.new(nil)
+    expect(ability.can?(:create, build(:comment))).to be_falsy
+  end
+
   def can?(action, subject)
     ability.can?(action, subject)
   end
+
 end
