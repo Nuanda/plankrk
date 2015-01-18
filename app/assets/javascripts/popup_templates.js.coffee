@@ -23,6 +23,9 @@ class @PopupTemplates
   # Run as dynamic functions in order to be able to use proper locales
   @zonePopupTemplate = -> """
     <h3>{OZNACZENIE} ({RODZAJ_OZN})</h3>
+    <small>
+      {ZONE_USE}
+    </small><br>
     #{I18n.t('map.plan')}: {NAZWA_MPZP}<br>
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-sm"
@@ -47,3 +50,4 @@ class @PopupTemplates
         $.extend feature.properties,
           NR_PLANU: if feature.properties.NR_PLANU then " (#{feature.properties.NR_PLANU})" else ""
           BIP: "<a href='#{feature.properties.WWW}'>#{I18n.t('krakow.mpzp.bip_link')}</a><br>"
+          ZONE_USE: I18n.t("use_type.#{feature.properties.RODZAJ_OZN}")

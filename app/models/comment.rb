@@ -19,4 +19,10 @@ class Comment < ActiveRecord::Base
 
   scope :by, ->(user) { where(author: user) }
 
+
+  # def purge
+  #   content = I18n.t 'discussions.comment.content.purged'
+  #   save
+  # end
+
 end
