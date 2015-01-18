@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include Ajaxable
+
   load_and_authorize_resource only: [:create]
   layout false
 
