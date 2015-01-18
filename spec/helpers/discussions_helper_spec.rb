@@ -11,4 +11,25 @@ RSpec.describe DiscussionsHelper, type: :helper do
 
   end
 
+  describe '#discussion_title' do
+
+    it 'throws exception on nil discussion' do
+      expect{ discussion_title(nil) }.to raise_error(NoMethodError)
+    end
+
+    it 'provides default on nil or empty title' do
+      d = create(:discussion, title: nil)
+      expect(discussion_title(d)).
+        to eq t('discussions.discussion.title.default',
+                id: d.id, fid: d.fid
+               )
+      d = create(:discussion, title: '')
+      expect(discussion_title(d)).
+        to eq t('discussions.discussion.title.default',
+                id: d.id, fid: d.fid
+               )
+    end
+
+  end
+
 end

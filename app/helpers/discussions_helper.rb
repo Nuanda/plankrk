@@ -10,11 +10,11 @@ module DiscussionsHelper
   end
 
   def discussion_title(discussion)
-    if discussion.title.empty?
+    if discussion.title.present?
+      discussion.title
+    else
       t 'discussions.discussion.title.default',
         id: discussion.id, fid: discussion.fid
-    else
-      discussion.title
     end
   end
 
