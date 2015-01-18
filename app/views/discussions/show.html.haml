@@ -2,7 +2,7 @@
 
   %li.list-group-item.discussion-header
     %h3
-      = link_to discussions_path(fid: @discussion.fid),
+      = link_to discussions_path(fid: @discussion.fid, list_only: true),
                 id: 'back-to-discussions',
                 remote: true, class: 'pull-left' do
         = icon('arrow-left')

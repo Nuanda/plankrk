@@ -9,13 +9,12 @@ class @Discussions
     $('body').on 'ajax:success', '#new_comment', (e, data, status, xhr) ->
       $('#discussions').html data
 
-    $('body').on 'ajax:success', '#new_discussion', (e, data, status, xhr) ->
+    $('body').on 'ajax:success',
+                 '#new_discussion, #back-to-discussions',
+                 (e, data, status, xhr) ->
       $('#discussions').html data
       $('#new-discussion #discussion_title').val('')
       $('#new-discussion').collapse('hide')
-
-    $('body').on 'ajax:success', '#back-to-discussions', (e, data, status, xhr) ->
-      $('#discussions-tab').html data
 
     $('body').on 'click', 'a[href=#discussions-tab]', ->
       discussionsPath = Routes.discussions_path(

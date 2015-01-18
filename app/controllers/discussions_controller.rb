@@ -7,6 +7,9 @@ class DiscussionsController < ApplicationController
   def index
     if params[:fid]
       @discussions = Discussion.about params[:fid]
+      if params[:list_only]
+        render partial: 'list', object: @discussions
+      end
     else
       @recently_created = Discussion.recently_created
       @recently_commented = Discussion.recently_commented.all
