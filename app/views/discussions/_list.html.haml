@@ -6,11 +6,7 @@
         .panel-heading{ role: 'tab' }
           %a.collapsed{ href: "[data-discussion=#{discussion.id}]",
           data: { toggle: 'collapse', parent: '.discussion-list' }}
-            - if discussion.title.empty?
-              = t 'discussions.discussion.title.default',
-                  id: discussion.id, fid: discussion.fid
-            - else
-              = discussion.title
+            = discussion_title discussion
           .pull-right
             - if can?(:destroy, discussion)
               = link_to discussion_path(id: discussion.id),

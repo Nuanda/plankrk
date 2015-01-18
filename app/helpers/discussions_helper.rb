@@ -9,4 +9,13 @@ module DiscussionsHelper
     end
   end
 
+  def discussion_title(discussion)
+    if discussion.title.empty?
+      t 'discussions.discussion.title.default',
+        id: discussion.id, fid: discussion.fid
+    else
+      discussion.title
+    end
+  end
+
 end
