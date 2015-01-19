@@ -1,10 +1,8 @@
 class DiscussionsController < ApplicationController
+  include Ajaxable
+
   load_and_authorize_resource only: [:create, :destroy]
   layout false
-
-  rescue_from CanCan::AccessDenied do |exception|
-    render_error(exception.message, status: current_user ? 403 : 401)
-  end
 
   def index
     if params[:fid]
