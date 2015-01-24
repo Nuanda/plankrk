@@ -120,6 +120,12 @@ class @ZoningMap
     @detailedZoning.on 'click', (e) =>
       clickFunc(e, Config.ZONE_DEEP_COLOR, @detailedZoning)
 
+    @zoningMap.on 'zoomstart', (e) =>
+      if e.target.getZoom() < 15
+        @zoningMap.removeLayer @detailedZoning
+        unless @zoningMap.hasLayer @districtContours
+          @zoningMap.addLayer @districtContours
+
     # Binding popup templates to features of both layers, to be shown on feature click
     PopupTemplates.bindPopup @detailedZoning, PopupTemplates.zonePopupTemplate()
 
