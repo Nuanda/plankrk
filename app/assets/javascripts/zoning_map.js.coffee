@@ -96,6 +96,11 @@ class @ZoningMap
       # Save the svg element of that tooltip for later removing
       oldTooltipElement = e.originalEvent.fromElement
 
+    @swapLayers = (from, to) ->
+      @zoningMap.removeLayer from
+      unless @zoningMap.hasLayer to
+        @zoningMap.addLayer to
+
     @districtContours.on 'mouseover', (e) =>
       mouseoverFunc(e, @featureColor(e.layer.feature), @districtContours)
       @createDistrictTooltip e
@@ -120,11 +125,9 @@ class @ZoningMap
     @detailedZoning.on 'click', (e) =>
       clickFunc(e, Config.ZONE_DEEP_COLOR, @detailedZoning)
 
-    @zoningMap.on 'zoomstart', (e) =>
+    @zoningMap.on 'zoomend', (e) =>
       if e.target.getZoom() < 15
-        @zoningMap.removeLayer @detailedZoning
-        unless @zoningMap.hasLayer @districtContours
-          @zoningMap.addLayer @districtContours
+        @swapLayers(@detailedZoning, @districtContours)
 
     # Binding popup templates to features of both layers, to be shown on feature click
     PopupTemplates.bindPopup @detailedZoning, PopupTemplates.zonePopupTemplate()
@@ -135,9 +138,7 @@ class @ZoningMap
 
     $('#zoom-out-button').on 'click', =>
       # Assure only districts are shown
-      @zoningMap.removeLayer @detailedZoning
-      unless @zoningMap.hasLayer @districtContours
-        @zoningMap.addLayer @districtContours
+      @swapLayers(@detailedZoning, @districtContours)
       # Zoom the map to proper bounds
       southWest = L.latLng Config.MAX_BOUNDS_SOUTH, Config.MAX_BOUNDS_WEST
       northEast = L.latLng Config.MAX_BOUNDS_NORTH, Config.MAX_BOUNDS_EAST
