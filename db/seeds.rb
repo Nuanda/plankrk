@@ -5,9 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-if Rails.env.development?
-  Discussion.create title: 'Do we or do we not build our new office here?', fid:  5712
-  Discussion.create title: 'Relokacja restauracji Przeskok', fid:  5712
-  Discussion.create title: 'Ten trawnik wymaga pomocy!', fid:  5727
-end
