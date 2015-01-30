@@ -2,7 +2,7 @@ class DiscussionsController < ApplicationController
   include Ajaxable
 
   load_and_authorize_resource only: [:create, :destroy]
-  layout false
+  layout false, except: :show
 
   def index
     if params[:fid]
@@ -19,6 +19,12 @@ class DiscussionsController < ApplicationController
 
   def show
     @discussion = Discussion.find params[:id]
+
+    if request.xhr?
+      render 'show', layout: false
+    else
+      render 'index', layout: true
+    end
   end
 
   def create
