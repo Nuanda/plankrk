@@ -4,7 +4,7 @@ class @ZoningMap
 
     # Create a map in the "map" div, set the view to Kraków and zoom level to 13
     @zoningMap = L.map('zoning-map', { zoomControl: false })
-      .setView [50.075, 19.92], 15
+                  .setView [50.06, 19.95], 13
     new L.Control.Zoom(
       zoomInTitle: I18n.t('map.zoom_in')
       zoomOutTitle: I18n.t('map.zoom_out')
