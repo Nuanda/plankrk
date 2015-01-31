@@ -23,7 +23,8 @@ class DiscussionsController < ApplicationController
     if request.xhr?
       render 'show', layout: false
     else
-      render 'index', layout: true
+      # render 'index', layout: true
+      render 'home/index', layout: true
     end
   end
 
