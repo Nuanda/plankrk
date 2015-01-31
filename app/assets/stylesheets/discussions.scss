@@ -20,3 +20,31 @@
   }
 
 }
+
+.discussion {
+  color: #525252;
+
+  .discussion-header {
+    padding: 10px;
+    color: #FBFBF0;
+    background-color: #436E90;
+    border-color: #436E90;
+
+    #back-to-discussions {
+      color: #FBFBF0;
+      padding-right: 10px;
+
+      :hover {
+        color: #dbdbdb;
+      }
+    }
+  }
+
+  .discussion-item {
+    background-color: #FBFBF0;
+
+    .comment-body {
+      padding-left: 55px;
+    }
+  }
+}
